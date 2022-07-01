@@ -8,7 +8,7 @@ module DMemory(
 	); 
 	
 	reg [7:0] memory [0:66565];
-	reg [15:0] d;
+	reg [15:0] d;#Comment by prabhani
 	
 	assign Dout = d;
 	
