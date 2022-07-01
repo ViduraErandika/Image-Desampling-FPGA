@@ -27,21 +27,21 @@ module processor(
 	SRegister AC(.clk(clk), .LDsignal(lac), .Din(C), .Dout(ac), .inc(incac), .reset(resetac));
 	SRegister PC(.clk(clk), .LDsignal(lpc), .Din(C), .Dout(pc), .inc(incpc), .reset(resetpc));
 	
-	ALU alu(.A(A), .B(B), .C(C), .z(z), .operation(operation), .clk(clk));
+	ALU ALU(.A(A), .B(B), .C(C), .z(z), .operation(operation), .clk(clk));
 	
-	Mux mux(.select(M_select), .out(A), .r1(r1), .r2(r2), .r3(r3), .r4(r4), .r5(r5), .ar(ar), .ac(ac), .ir(ir),
+	Mux MUX(.select(M_select), .out(A), .r1(r1), .r2(r2), .r3(r3), .r4(r4), .r5(r5), .ar(ar), .ac(ac), .ir(ir),
 	            .pram(pram), .dram(dram));
 					
-	Decoder decoder(.select(D_select), .r1(lr1), .r2(lr2), .r3(lr3), .r4(lr4), .r5(lr5),
+	Decoder Decoder(.select(D_select), .r1(lr1), .r2(lr2), .r3(lr3), .r4(lr4), .r5(lr5),
 								.ar(lar), .ac(lac), .ir(lir), .pc(lpc));
 	
-	ControlUnit cu(.ir(ir), .z(z), .clk(clk), .start(start), .D_select(D_select), .M_select(M_select),
+	ControlUnit CU(.ir(ir), .z(z), .clk(clk), .start(start), .D_select(D_select), .M_select(M_select),
 							.operation(operation), .read(read), .write(write), .endp(endp), .incac(incac), .incpc(incpc),
 							.resetac(resetac), .resetpc(resetpc));
 							
-	assign arout = ar;
-	assign pcout = pc;
-	assign acout = ac;
+	assign arout = ar; //address to the Dram.
+	assign pcout = pc; // address to the Pram.
+	assign acout = ac;//data input to the Dram
 	assign B = ac;
 	
 endmodule

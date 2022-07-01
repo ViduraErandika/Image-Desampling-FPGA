@@ -7,10 +7,16 @@ module DMemory(
 	output wire [15:0] Dout
 	); 
 	
-	reg [7:0] memory [0:65535];
+	reg [7:0] memory [0:66565];
 	reg [15:0] d;
 	
 	assign Dout = d;
+	
+	initial
+	begin
+	$readmemh("imageArrayhexfile.txt",memory);
+	end
+	
 	
 	always @(posedge clk) begin
 		if (read) d = {8'd0,memory[address]};
