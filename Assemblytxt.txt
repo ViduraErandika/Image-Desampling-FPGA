@@ -1,11 +1,12 @@
-CLAC            //AC<-0
-MOVACAR         //MAR<-AC
+CLAC            //AC<-0                   
+MVACAR          //MAR<-AC
 LDAC            //AC<-DRAM[0]   (255 in DRAM[0])
 INAC			//AC<-AC+1
 MVACL			//L<-AC         (L=256: Length of one image side)
 MVACE           //E<-AC
 MVACR1          //R1<-AC
 MULL            //AC<AC*L       (AC=256*256)
+MVACR4          //R4<AC         (R4 = 256+256) 
 SUBL            //AC<AC-L       (AC=256*256-256)
 DCAC            //AC<AC-1
 DCAC            //AC<AC-1
@@ -25,12 +26,24 @@ CLAC            //AC<-0
 INAC			//AC<-AC+1 
 MVACR2			//R2<-AC    j=1
 
+MVR4AC          //AC<R4
+ADD256			//AC+256     
+ADD256			//AC+256     
+ADD256			//AC+256     
+ADD256			//AC+256     AC = (256*256)+4*256 = 66560
+INAC			//AC<-AC+1 
+INAC			//AC<-AC+1 
+INAC			//AC<-AC+1 
+INAC			//AC<-AC+1 
+INAC			//AC<-AC+1   AC = (256*256)+4*256 + 5 = 66565
+MVACR4          //R4<AC      R4 = 66565
+
 L1
     MVR1AC 			//AC<-R1  AC=i
     ADD256			//AC+256  AC=i+256
     INAC			//AC<-AC+1 
     INAC			//AC<-AC+1  
-    MOVACAR         //MAR<-AC
+    MVACAR          //MAR<-AC
     LDAC            //AC<-DRAM[i+258]
     MVACR3			//R3<-AC      im[i-1+256+2]
 
@@ -39,7 +52,7 @@ L1
     INAC			//AC<-AC+1 
     INAC			//AC<-AC+1
     INAC			//AC<-AC+1 
-    MOVACAR         //MAR<-AC
+    MVACAR          //MAR<-AC
     LDAC            //AC<-DRAM[i+259]	im[i+256+2]
     MUL2 			//AC*2        		2* im[i+256+2]
     ADDR3			//AC<-AC+R3		
@@ -51,13 +64,13 @@ L1
     INAC			//AC<-AC+1
     INAC			//AC<-AC+1
     INAC			//AC<-AC+1 
-    MOVACAR         //MAR<-AC     
+    MVACAR          //MAR<-AC     
     LDAC            //AC<-DRAM[i+260]	im[i+1+256+2]
     ADDR3			//AC<-AC+R3
     MVACR3			//R3<-AC
 
     MVR1AC 			//AC<-R1  AC=i 
-    MOVACAR         //MAR<-AC
+    MVACAR          //MAR<-AC
     LDAC            //AC<-DRAM[i]		im[i-1]
     MUL2 			//AC*2        		2* im[i-1]
     ADDR3			//AC<-AC+R3		
@@ -65,7 +78,7 @@ L1
 
     MVR1AC 			//AC<-R1  AC=i 
     INAC			//AC<-AC+1 
-    MOVACAR         //MAR<-AC
+    MVACAR          //MAR<-AC
     LDAC            //AC<-DRAM[i+1]		im[i]
     MUL4 			//AC*4        		4*im[i]
     ADDR3			//AC<-AC+R3		
@@ -74,7 +87,7 @@ L1
     MVR1AC 			//AC<-R1  AC=i 
     INAC			//AC<-AC+1
     INAC			//AC<-AC+1  
-    MOVACAR         //MAR<-AC
+    MVACAR          //MAR<-AC
     LDAC            //AC<-DRAM[i+2]		im[i+1]
     MUL2 			//AC*2        		2*im[i+1]
     ADDR3			//AC<-AC+R3		
@@ -84,7 +97,7 @@ L1
     SUB256			//AC<-AC-256
     DCAC			//AC<-AC-1
     DCAC			//AC<-AC-1
-    MOVACAR         //MAR<-AC
+    MVACAR          //MAR<-AC
     LDAC            //AC<-DRAM[i-258]    im[i-259]
     ADDR3			//AC<-AC+R3		
     MVACR3			//R3<-AC
@@ -92,7 +105,7 @@ L1
     MVR1AC 			//AC<-R1  AC=i
     SUB256			//AC<-AC-256
     DCAC			//AC<-AC-1
-    MOVACAR         //MAR<-AC
+    MVACAR          //MAR<-AC
     LDAC            //AC<-DRAM[i-257]    im[i-258]
     MUL2 			//AC*2 
     ADDR3			//AC<-AC+R3		
@@ -100,16 +113,17 @@ L1
 
     MVR1AC 			//AC<-R1  AC=i
     SUB256			//AC<-AC-256
-    MOVACAR         //MAR<-AC
+    MVACAR          //MAR<-AC
     LDAC            //AC<-DRAM[i-256]    im[i-257]
     ADDR3			//AC<-AC+R3		
     DIV16			//AC<-AC/16          total/16
     MVACR3			//R3<-AC
-    MVR1AC 			//AC<-R1  AC=i
+    MVR4AC 			//AC<-R4  
+    MVACAR          //MAR<-AC            downsampled[new location] 
     INAC			//AC<-AC+1
-    MOVACAR         //MAR<-AC            im[i] 
+    MVACR4 			//R4<AC 
     MVR3AC			//AC<-R3
-    STAC			//DRAM[i+1]<-AC      //Must send the write signal to DRAM 
+    STAC			//DRAM[new location]<-AC      //Must send the write signal to DRAM 
 
     MVR2AC 			//AC<-R2            j=1
     INAC			//AC<-AC+1          
@@ -133,7 +147,14 @@ L1
     L2
 
     SUBL			//AC<AC-L IF(AC-L)==0, Then Z=1; Else Z=0;
-    JMPZ			//If Z==0 THEN GOTO L1
+    JMPZ			//If Z==0 THEN GOTO L1       
+END
 
 
-EXIT
+
+L = ((256+2)*(256+2))-(256+2)-1
+E = 129 = j
+R1 = i
+R2 = J
+R3 = total
+R4 = Dram store base address
