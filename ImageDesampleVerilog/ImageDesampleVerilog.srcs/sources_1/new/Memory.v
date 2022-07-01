@@ -1,10 +1,8 @@
 module Memory(
 	input wire clk,
-	input wire write,
-	input wire read,
-	input wire [15:0] Din,
+	input wire fetch,
 	input wire [15:0] address,
-	output wire [15:0] Dout
+	output wire [7:0] Dout
 	); 
 	
 	reg [7:0] memory [0:255];
@@ -17,8 +15,7 @@ module Memory(
     end
 	
 	always @(posedge clk) begin
-		if (read) d = {8'd0,memory[address]};
-		else if (write) memory[address] = Din[7:0];
+		if (fetch) d = memory[address];
 	end
 	
 

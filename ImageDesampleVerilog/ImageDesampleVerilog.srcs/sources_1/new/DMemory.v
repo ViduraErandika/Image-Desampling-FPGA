@@ -3,7 +3,7 @@ module DMemory(
 	input wire write,
 	input wire read,
 	input wire [15:0] Din,
-	input wire [15:0] address,
+	input wire [17:0] address,
 	output wire [15:0] Dout
 	); 
 	

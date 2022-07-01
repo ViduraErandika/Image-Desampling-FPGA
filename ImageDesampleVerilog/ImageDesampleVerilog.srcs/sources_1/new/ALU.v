@@ -7,43 +7,41 @@ module ALU(
 	output wire [15:0] C
 	);
 	
-	localparam pass   = 3'd1,
-			     add    = 3'd2,
-				  sub    = 3'd3,
-				  lshift = 3'd4,
-				  rshift = 3'd5,
-				  orOp 	= 3'd6;
+	localparam    none     = 4'b0000,
+	              ADD      = 4'b0001,
+			      SUB      = 4'b0010,
+				  PASSBTOC = 4'b0011,
+				  DECAC    = 4'b0100,
+				  LSHIFT1  = 4'b0101,
+				  LSHIFT2  = 4'b0110,
+				  LSHIFT8  = 4'b0111,
+				  RSHIFT1  = 4'b1000,
+				  RSHIFT4  = 4'b1001;
+			
+				  
+				  
 	
 	reg d;
 	reg counter;
 	reg [15:0] data;
 	assign C=data;
 	
-//	initial begin
-//		counter =0;
-//	end
-	
-	always @(posedge clk) begin
-		z = (B==0)? 1'b1:1'b0;
-	end
 		
 	always @(A or B or operation) begin
 		case(operation)
-			pass: data = A; 
-			add: data = A+B;
-			sub: begin
-				data = B-A;
-//				d=~|data;
-//				if (~|data) begin
-//					if (~counter) z=~|data;
-//					counter = counter+1;
-//				end
-				
-				end
-			lshift: data = B<<1;
-			rshift: data = (B[1]==1)? ((B>>2)+1):B>>2;
-			orOp : data = A|B;
-			default: data=data;
+			ADD: data = A+B;
+			SUB: begin
+			     data = (A>B)? (A - B): (B - A);
+			     z = (data == 0)? 1'b1:1'b0;
+			     end
+			PASSBTOC: data = B;
+			DECAC: data = A-1; 
+			LSHIFT1: data = A<<1;
+			LSHIFT2: data = A<<2;
+			LSHIFT8: data = A<<8;
+			RSHIFT1: data = A>>1;
+			RSHIFT4: data = A>>4;
+			none: data=data;
 		endcase
 	end
 endmodule	
