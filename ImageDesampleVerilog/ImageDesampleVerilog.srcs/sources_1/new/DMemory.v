@@ -7,8 +7,8 @@ module DMemory(
 	output wire [15:0] Dout
 	); 
 	
-	reg [7:0] memory [0:82950]; //128*128 + 65566
-	reg [15:0] d;
+	reg [7:0] memory [0:66565];
+	reg [15:0] d;//Comment by prabhani
 	
 	assign Dout = d;
 	
