@@ -1,10 +1,10 @@
 module ALU(
 	input wire clk,
-	input wire [15:0] A,
-	input wire [15:0] B,
-	input wire [2:0] operation,
+	input wire [17:0] A,
+	input wire [17:0] B,
+	input wire [3:0] operation,
 	output reg z,
-	output wire [15:0] C
+	output wire [17:0] C
 	);
 	
 	localparam    none     = 4'b0000,
@@ -17,13 +17,8 @@ module ALU(
 				  LSHIFT8  = 4'b0111,
 				  RSHIFT1  = 4'b1000,
 				  RSHIFT4  = 4'b1001;
-			
-				  
-				  
-	
-	reg d;
-	reg counter;
-	reg [15:0] data;
+
+	reg [17:0] data;
 	assign C=data;
 	
 		
