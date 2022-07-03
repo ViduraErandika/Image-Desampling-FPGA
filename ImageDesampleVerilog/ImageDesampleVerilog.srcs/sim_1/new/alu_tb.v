@@ -54,7 +54,7 @@ module alu_tb();
     
    
     
-    for( i=0; i<8 ; i=i+1)begin
+    for( i=0; i<10 ; i=i+1)begin
     operation = operation + 4'b0001;
     #10; //delay
     end

@@ -3,7 +3,7 @@ module ALU(
 	input wire [17:0] A,
 	input wire [17:0] B,
 	input wire [3:0] operation,
-	output reg z,
+	output wire z,
 	output wire [17:0] C
 	);
 	
@@ -19,6 +19,8 @@ module ALU(
 				  RSHIFT4  = 4'b1001;
 
 	reg [17:0] data;
+	reg Z;
+	assign z = Z;
 	assign C=data;
 	
 		
@@ -27,7 +29,7 @@ module ALU(
 			ADD: data = A+B;
 			SUB: begin
 			     data = (A>B)? (A - B): (B - A);
-			     z = (data == 0)? 1'b1:1'b0;
+			     Z = (data == 0)? 1'b1:1'b0;
 			     end
 			PASSBTOC: data = B;
 			DECAC: data = A-1; 

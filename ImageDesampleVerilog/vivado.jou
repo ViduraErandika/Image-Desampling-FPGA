@@ -2,21 +2,27 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Sun Jul  3 14:44:08 2022
-# Process ID: 10920
+# Start of session at: Sun Jul  3 16:20:17 2022
+# Process ID: 17072
 # Current directory: D:/FPGA_Development/Image-Desampling-FPGA/ImageDesampleVerilog
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent12944 D:\FPGA_Development\Image-Desampling-FPGA\ImageDesampleVerilog\ImageDesampleVerilog.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent16968 D:\FPGA_Development\Image-Desampling-FPGA\ImageDesampleVerilog\ImageDesampleVerilog.xpr
 # Log file: D:/FPGA_Development/Image-Desampling-FPGA/ImageDesampleVerilog/vivado.log
 # Journal file: D:/FPGA_Development/Image-Desampling-FPGA/ImageDesampleVerilog\vivado.jou
 #-----------------------------------------------------------
 start_gui
 open_project D:/FPGA_Development/Image-Desampling-FPGA/ImageDesampleVerilog/ImageDesampleVerilog.xpr
 update_compile_order -fileset sources_1
-file mkdir D:/FPGA_Development/Image-Desampling-FPGA/ImageDesampleVerilog/ImageDesampleVerilog.srcs/sim_1/new
-set_property SOURCE_SET sources_1 [get_filesets sim_1]
-close [ open D:/FPGA_Development/Image-Desampling-FPGA/ImageDesampleVerilog/ImageDesampleVerilog.srcs/sim_1/new/alu_tb.v w ]
-add_files -fileset sim_1 D:/FPGA_Development/Image-Desampling-FPGA/ImageDesampleVerilog/ImageDesampleVerilog.srcs/sim_1/new/alu_tb.v
-update_compile_order -fileset sim_1
-update_ip_catalog
-update_ip_catalog
 launch_simulation
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top ALU [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+launch_simulation
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top TopModule [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
