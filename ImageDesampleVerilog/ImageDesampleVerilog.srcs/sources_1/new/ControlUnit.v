@@ -112,4 +112,148 @@ module ControlUnit(
 			endcase
 	end
 			
+<<<<<<< origin/main
 endmodule 
+=======
+//endmodule 
+
+
+module ControlUnit(
+	input wire [17:0] ir, // select last 8 bits
+	input wire z,
+	input wire start_sig, 
+	input wire clk,
+	output reg [3:0] mux_sig,
+	output reg [3:0] alu_sig,
+	output reg iram_read,
+    output reg iram_write,
+    output reg dram_read,
+    output reg dram_write,
+    output reg [8:0] load_decode_sig,
+    output reg incac,
+    output reg [2:0] pc_sig // 
+    
+	);
+	// Initial State
+    reg [6:0] state = 7'd43; 
+    
+	// ALU parameters
+    localparam   none_ALU    = 4'b0000,
+                  ADD      = 4'b0001,
+                  SUB      = 4'b0010,
+                  PASSBTOC = 4'b0011,
+                  DECAC    = 4'b0100,
+                  LSHIFT1  = 4'b0101,
+                  LSHIFT2  = 4'b0110,
+                  LSHIFT8  = 4'b0111,
+                  RSHIFT1  = 4'b1000,
+                  RSHIFT4  = 4'b1001,
+                  RESET    = 4'b1011;
+                  
+    // MUX parameters
+    localparam   none_M = 4'b0000, 
+                 R1_M  = 4'b0110,
+                 R2_M  = 4'b0111,
+                 R3_M  = 4'b1000,
+                 R4_M   = 4'b1001,
+                 L_M    = 4'b0101,
+                 E_M    = 4'b0100,
+                 MBRU_M = 4'b0011,
+                 PC_M   = 4'b0010,
+                 MDR_M  = 4'b0001;
+                 
+   //Decoder parameters
+   localparam    none_D= 9'b000000000,
+                MAR_D  = 9'b100000000,
+                 MDR_D  = 9'b010000000,
+                 PC_D   = 9'b001000000,
+                 L_D    = 9'b000100000,
+                 R1_D   = 9'b000010000,
+                 R2_D   = 9'b000001000,
+                 R3_D   = 9'b000000100,
+                 R4_D   = 9'b000000010,
+                 E_D    = 9'b000000001;
+                
+   //PC parameters
+  localparam    pc_reset= 3'b000,
+                 pc_inc= 3'b001,
+                 pc_loop= 3'b010,
+                 pc_if=3'b011,
+                 pc_default=3'b100;
+                 
+  // AC increment
+  localparam   inc_on= 1'b0,
+               inc_off= 1'b1;
+               
+  // IRAM Read
+  localparam   IRAM_read_on= 1'b0,
+               IRAM_read_off=1'b1;
+               
+  //IRAM Write
+  localparam   IRAM_write_on= 1'b0,
+               IRAM_write_off=1'b1;
+               
+   //DRAM Read
+   localparam   DRAM_read_on= 1'b0,
+                DRAM_read_off=1'b1;
+   //DRAM Write
+     localparam   DRAM_write_on= 1'b0,
+                  DRAM_write_off=1'b1;
+   
+   
+    
+ localparam     FETCH1 = 7'd1, FETCH2 = 7'd2,NOP = 7'd3,LDAC1= 7'd4,LDAC2= 7'd5,STAC1= 7'd6,STAC2= 7'd7,CLAC= 7'd8,MVACMAR = 7'd8,
+                 MVACR1= 7'd9,MVACR2= 7'd10,MVACR3= 7'd11,MVACR4= 7'd12,MVACL= 7'd13,MVACE= 7'd14,MVR1AC= 7'd15,MVR2AC= 7'd16,
+                 MVR3AC= 7'd17,MVR4AC= 7'd18,MVEAC= 7'd19,MVLAC= 7'd20,INAC= 7'd21,DCAC= 7'd22,ADD256= 7'd23,ADDR1= 7'd24,
+                 ADDR3= 7'd25,ADDL= 7'd26,SUB256= 7'd27,SUBL= 7'd28,SUBE= 7'd29,DIV2= 7'd30,DIV16= 7'd31,MUL2= 7'd32,
+                 MUL4= 7'd33,MULL= 7'd34, JMPZY1= 7'd35,JMPZY2 =7'd36,JMPZY3 =7'd37,JMPZX1=7'd38,
+                 JMPNY1= 7'd39,JMPNY2 =7'd40,JMPNY3 =7'd41,JMPNX1=7'd42,END= 7'd43;
+                 
+ always @(posedge clk)
+                 begin
+                     case (state) 
+                     FETCH1:
+                     begin
+                         mux_sig <= none_M;
+                         alu_sig <= none_ALU;
+                         load_decode_sig<= none_D;
+                         incac<= inc_off;
+                         iram_read <= IRAM_read_off;
+                         iram_write <= IRAM_write_off;
+                         dram_read <= DRAM_read_off;
+                         dram_write <= DRAM_write_off; 
+                         pc_sig <= pc_default;
+                         state <= FETCH2;
+                        
+                        
+                     end 
+                     END:
+                     begin
+                        mux_sig <= none_M;
+                        alu_sig <= none_ALU;
+                        load_decode_sig<= none_D;
+                        incac<= inc_off;
+                        iram_read <= IRAM_read_off;
+                        iram_write <= IRAM_write_off;
+                        dram_read <= DRAM_read_off;
+                        dram_write <= DRAM_write_off;    
+                        if (start_sig)	
+                                 begin
+                                     pc_sig <= pc_reset;
+                                     state <= FETCH1;
+                                 end
+                                 else 
+                                 begin
+                                     pc_sig <= pc_default;
+                                     state <= END;
+                                 end
+                                 end
+                      endcase
+end
+
+                     
+
+                     
+                      
+endmodule            
+>>>>>>> local
