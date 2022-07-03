@@ -1,132 +1,12 @@
-//module ControlUnit(
-//	input wire [15:0] ir,
-//	input wire z,
-//	input wire start,
-//	input wire clk,
-//	output reg [3:0] D_select,
-//	output reg [3:0] M_select,
-//	output reg [2:0] operation,
-//	output reg read,
-//	output reg write,
-//	output reg endp,
-//	output reg incac, incpc,
-//	output reg resetac,resetpc
-//	);
-	
-//	reg [7:0] ins;
-//	reg [21:0] musec [0:23];
-//	reg [4:0] current_state;
-//	reg [4:0] next_state,mins;
-//	reg [3:0] instruction;
-	
-//	localparam  NOPE    = 4'd0,
-//					CLAC    = 4'd1,
-//					LDAC    = 4'd2,
-//					LOADVAL = 4'd3,
-//					INC     = 4'd4,
-//					JPNZ    = 4'd5,
-//					LSHIFT  = 4'd6,
-//					RSHIFT  = 4'd7,
-//					STAC    = 4'd8,
-//					JUMP    = 4'd9,
-//					MOVE    = 4'd10,
-//					MOVEAC  = 4'd11,
-//					ADD     = 4'd12,
-//					SUB     = 4'd13,
-//					EOP     = 4'd15,
-//					OR		= 4'd14;
-	
-	
-	
-//	initial begin
-//		musec[0]  = {4'd0,4'd0,3'd0,6'b000101,5'd1};
-//		musec[1]  = {4'd8,4'd0,3'd0,6'b100000,5'd2};
-//		musec[2]  = {4'd8,4'd0,3'd0,6'b000010,5'd23};
-//		musec[3]  = 22'd1;
-//		musec[4]  = {4'd0,4'd0,3'd0,6'b000100,5'd1};
-//		musec[5]  = {4'd0,4'd10,3'd1,6'b100000,5'd6};
-//		musec[6]  = {4'd7,4'd10,3'd1,6'b000000,5'd1};
-//		musec[7]  = {4'd0,4'd9,3'd1,6'b100000,5'd8};
-//		musec[8]  = {4'd7,4'd9,3'd1,6'b000010,5'd1};
-//		musec[9]  = {4'd0,4'd0,3'd0,6'b000010,5'd1};
-//		musec[10] = {4'd0,4'd9,3'd1,6'b100000,5'd11};
-//		musec[11] = {4'd9,4'd9,3'd1,6'b000000,5'd1};
-//		musec[12] = {4'd7,4'd7,3'd4,6'b000000,5'd1};
-//		musec[13] = {4'd7,4'd7,3'd5,6'b000000,5'd1};
-//		musec[14] = {4'd7,4'd0,3'd1,6'b000000,5'd1};
-//		musec[15] = {4'd0,4'd7,3'd1,6'b000000,5'd1};
-//		musec[16] = {4'd7,4'd0,3'd2,6'b000000,5'd1};
-//		musec[17] = {4'd7,4'd0,3'd3,6'b000000,5'd1};
-//		musec[18] = {4'd0,4'd0,3'd0,6'b001000,5'd1};
-//		musec[19] = {4'd0,4'd9,3'd1,6'b100000,5'd20};
-//		musec[20] = {4'd9,4'd9,3'd1,6'b000000,5'd1};
-//		musec[21] = {4'd0,4'd0,3'd0,6'b010000,5'd1};
-//		musec[22] = {4'd0,4'd0,3'd0,6'b000101,5'd22};
-//		musec[23] = {4'd0,4'd0,3'd0,6'b000000,5'd0};
-//		musec[24] = {4'd7,4'd0,3'd6,6'b000000,5'd1};
-//		next_state = 5'b0;
-//		endp = 1'd0;
-//	end
-	
-////	always @(posedge start) begin 
-////		current_state = 5'd0;
-////		//endp = 1'b0;
-////	end
-
-//	always @(ir) ins=ir;
-	
-//	always @(negedge clk) begin
-//		if(start) begin
-//			current_state = next_state;
-//			{D_select,M_select,operation,read,write,incac,resetac,incpc,resetpc,next_state} = musec[current_state];
-//			if (current_state == 5'd23) next_state = mins;
-//			else if (current_state == 5'd14 | current_state == 5'd16 | current_state == 5'd17 | current_state == 5'd24) M_select = ins[7:4];
-//			else if (current_state == 5'd15) D_select = ins[7:4];
-//			else if (current_state == 5'd22) begin
-//				endp = 1'b1;
-//				current_state = 0;
-//			end
-//			else next_state = next_state;
-//		end
-//	end
-			
-//	always @(ins) begin
-//			instruction = ins[3:0];
-//			case (instruction)
-//				NOPE 	 : mins <= 5'd3;
-//				CLAC	 : mins <= 5'd4;
-//				LDAC	 : mins <= 5'd5;
-//				LOADVAL: mins <= 5'd7;
-//				JPNZ	 : mins <= (z)?5'd9:5'd10;
-//				LSHIFT : mins <= 5'd12;
-//				RSHIFT : mins <= 5'd13;
-//				MOVE   : mins <= 5'd14;
-//				MOVEAC : mins <= 5'd15;
-//				ADD    : mins <= 5'd16;
-//				SUB    : mins <= 5'd17;
-//				INC	 : mins <= 5'd18;
-//				JUMP	 : mins <= 5'd19;
-//				STAC 	 : mins <= 5'd21;
-//				EOP 	 : mins <= 5'd22;
-//				OR		 : mins <= 5'd24;
-//			endcase
-//	end
-			
-
-//endmodule 
-//=======
-////endmodule 
-
-
 module ControlUnit(
 	input wire [17:0] ir, // select last 8 bits
 	input wire z,
 	input wire start_sig, 
 	input wire clk,
+	
 	output reg [3:0] mux_sig,
 	output reg [3:0] alu_sig,
-	output reg iram_read,
-    output reg iram_write,
+	output reg iram_fetch,
     output reg dram_read,
     output reg dram_write,
     output reg [8:0] load_decode_sig,
@@ -135,7 +15,12 @@ module ControlUnit(
     
 	);
 	// Initial State
-    reg [6:0] state = 7'd43; 
+    reg [6:0] state = 7'd1;
+    
+    reg Z ;
+    
+    //IR value store register
+    reg [7:0] Din;
     
 	// ALU parameters
     localparam   none_ALU    = 4'b0000,
@@ -164,7 +49,7 @@ module ControlUnit(
                  
    //Decoder parameters
    localparam    none_D= 9'b000000000,
-                MAR_D  = 9'b100000000,
+                 MAR_D  = 9'b100000000,
                  MDR_D  = 9'b010000000,
                  PC_D   = 9'b001000000,
                  L_D    = 9'b000100000,
@@ -176,65 +61,570 @@ module ControlUnit(
                 
    //PC parameters
   localparam    pc_reset= 3'b000,
-                 pc_inc= 3'b001,
-                 pc_loop= 3'b010,
-                 pc_if=3'b011,
-                 pc_default=3'b100;
+                pc_inc= 3'b001,
+                pc_loop= 3'b010,
+                pc_if=3'b011,
+                pc_default=3'b100;
                  
   // AC increment
   localparam   inc_on= 1'b0,
                inc_off= 1'b1;
                
   // IRAM Read
-  localparam   IRAM_read_on= 1'b0,
-               IRAM_read_off=1'b1;
+  localparam   iram_fetch_on= 1'b0,
+               iram_fetch_off=1'b1;
                
-  //IRAM Write
-  localparam   IRAM_write_on= 1'b0,
-               IRAM_write_off=1'b1;
                
    //DRAM Read
    localparam   DRAM_read_on= 1'b0,
                 DRAM_read_off=1'b1;
    //DRAM Write
-     localparam   DRAM_write_on= 1'b0,
-                  DRAM_write_off=1'b1;
+   localparam   DRAM_write_on= 1'b0,
+                DRAM_write_off=1'b1;
    
+ 
    
     
- localparam     FETCH1 = 7'd1, FETCH2 = 7'd2,NOP = 7'd3,LDAC1= 7'd4,LDAC2= 7'd5,STAC1= 7'd6,STAC2= 7'd7,CLAC= 7'd8,MVACMAR = 7'd8,
-                 MVACR1= 7'd9,MVACR2= 7'd10,MVACR3= 7'd11,MVACR4= 7'd12,MVACL= 7'd13,MVACE= 7'd14,MVR1AC= 7'd15,MVR2AC= 7'd16,
-                 MVR3AC= 7'd17,MVR4AC= 7'd18,MVEAC= 7'd19,MVLAC= 7'd20,INAC= 7'd21,DCAC= 7'd22,ADD256= 7'd23,ADDR1= 7'd24,
-                 ADDR3= 7'd25,ADDL= 7'd26,SUB256= 7'd27,SUBL= 7'd28,SUBE= 7'd29,DIV2= 7'd30,DIV16= 7'd31,MUL2= 7'd32,
-                 MUL4= 7'd33,MULL= 7'd34, JMPZY1= 7'd35,JMPZY2 =7'd36,JMPZY3 =7'd37,JMPZX1=7'd38,
-                 JMPNY1= 7'd39,JMPNY2 =7'd40,JMPNY3 =7'd41,JMPNX1=7'd42,END= 7'd43;
+localparam     END1= 7'd1, FETCH1 = 7'd2, FETCH2 = 7'd3, LDAC2=7'd4,STAC2 = 7'd5;
+                
                  
- always @(posedge clk)
-                 begin
+//IR input parameters
+localparam       NOP =8'd1, CLAC = 8'd2, LDAC = 8'd3, STAC=8'd4 , INAC=8'd5, DCAC=8'd6, ADD256=8'd7 , SUB256=8'd8 , SUBL=8'd9 , 
+                 SUBBE=8'd10 , DIV2=8'd11 , DIV16=8'd12 , MUL2=8'd13 , MUL4=8'd14, MULL=8'd15, ADDR1=8'd16 , ADDR3=8'd17, ADDL=8'd18,
+                 MVACL=8'd19, MVACE=8'd20 , MVACR1=8'd21 , MVACR2=8'd22 , MVACR3=8'd23, MVACR4=8'd24, MVACAR=8'd25, MVEAC=8'd26, 
+                 MVR1AC=8'd27, MVR2AC=8'd28, MVR3AC=8'd29, MVR4AC=8'd30, JMPZ=8'd31, JMPN=8'd32, END=8'd33;
+              
+
+always @(ir)begin
+    Din <= ir[7:0];   
+end
+
+always @(negedge clk)begin
+     Z<= z ;
+end
+                 
+always @(posedge clk)
+     begin
                      case (state) 
                      FETCH1:
                      begin
-                         mux_sig <= none_M;
-                         alu_sig <= none_ALU;
+                         mux_sig    = none_M;
+                         alu_sig    <= none_ALU;
                          load_decode_sig<= none_D;
-                         incac<= inc_off;
-                         iram_read <= IRAM_read_off;
-                         iram_write <= IRAM_write_off;
-                         dram_read <= DRAM_read_off;
+                         incac      <= inc_off;
+                         iram_fetch  <= iram_fetch_on;                         
+                         dram_read  <= DRAM_read_off;
                          dram_write <= DRAM_write_off; 
-                         pc_sig <= pc_default;
-                         state <= FETCH2;
+                         pc_sig     <= pc_default;
+                         state      <= FETCH2;                                           
+                     end
+                  
+                     FETCH2:
+                     begin
+                                              
+                        case(Din)
                         
+                        NOP:
+                        begin
+                            mux_sig    = none_M;
+                            pc_sig  <= pc_inc;
+                            alu_sig    <= none_ALU;
+                            load_decode_sig<= none_D;
+                            incac      <= inc_off;
+                            iram_fetch  <= iram_fetch_off;                            
+                            dram_read  <= DRAM_read_off;
+                            dram_write <= DRAM_write_off; 
+                            state      <= FETCH1;
+                        end
                         
-                     end 
-                     END:
+                        CLAC:                            
+                        begin
+                            mux_sig    = none_M;
+                            pc_sig  <= pc_inc;
+                            alu_sig    <= RESET;
+                            load_decode_sig<= none_D;
+                            incac      <= inc_off;
+                            iram_fetch  <= iram_fetch_off; 
+                            dram_read  <= DRAM_read_off;
+                            dram_write <= DRAM_write_off; 
+                            state      <= FETCH1;                          
+                        end
+                        
+                        LDAC:
+                        begin
+                            mux_sig  = none_M;
+                            pc_sig  <= pc_inc;
+                            alu_sig    <= none_ALU;
+                            load_decode_sig<= none_D;
+                            incac      <= inc_off;
+                            iram_fetch  <= iram_fetch_off;
+                            dram_read  <= DRAM_read_on;
+                            dram_write <= DRAM_write_off; 
+                            state      <= LDAC2;
+                        end
+                        
+                        STAC:
+                        begin
+                            mux_sig    = none_M;
+                            pc_sig  <= pc_inc;
+                            alu_sig    <= none_ALU;
+                            load_decode_sig<= MDR_D;
+                            incac      <= inc_off;
+                            iram_fetch  <= iram_fetch_off;
+                            dram_read  <= DRAM_read_off;
+                            dram_write <= DRAM_write_off; 
+                            state      <= STAC2 ;             
+                        end
+                        
+                        INAC:
+                        begin
+                            mux_sig    = none_M;
+                            pc_sig  <= pc_inc;
+                            alu_sig    <= none_ALU;
+                            load_decode_sig<= none_D;
+                            incac      <= inc_on;
+                            iram_fetch  <= iram_fetch_off;
+                            dram_read  <= DRAM_read_off;
+                            dram_write <= DRAM_write_off; 
+                            state      <= FETCH1;
+                        end
+                        
+                        DCAC:
+                        begin
+                            mux_sig    = none_M;
+                            pc_sig  <= pc_inc;
+                            alu_sig    <= DECAC;
+                            load_decode_sig<= none_D;
+                            incac      <= inc_off;
+                            iram_fetch  <= iram_fetch_off;
+                            dram_read  <= DRAM_read_off;
+                            dram_write <= DRAM_write_off; 
+                            state      <= FETCH1 ; 
+                        end
+                        
+                        ADD256:
+                        begin
+                            mux_sig    = L_M;
+                            pc_sig  <= pc_inc;
+                            alu_sig    <= ADD;
+                            load_decode_sig<= none_D;
+                            incac      <= inc_off;
+                            iram_fetch  <= iram_fetch_off;
+                            dram_read  <= DRAM_read_off;
+                            dram_write <= DRAM_write_off; 
+                            state      <= FETCH1 ; 
+                        end
+                        
+                        SUB256:
+                        begin
+                            mux_sig    = L_M;
+                            pc_sig  <= pc_inc;
+                            alu_sig    <= SUB;
+                            load_decode_sig<= none_D;
+                            incac      <= inc_off;
+                            iram_fetch  <= iram_fetch_off;
+                            dram_read  <= DRAM_read_off;
+                            dram_write <= DRAM_write_off; 
+                            state      <= FETCH1 ; 
+                        end
+                        
+                        SUBL:
+                        begin
+                            mux_sig    = L_M;
+                            pc_sig  <= pc_inc;
+                            alu_sig    <= SUB;
+                            load_decode_sig<= none_D;
+                            incac      <= inc_off;
+                            iram_fetch  <= iram_fetch_off;
+                            dram_read  <= DRAM_read_off;
+                            dram_write <= DRAM_write_off; 
+                            state      <= FETCH1 ; 
+                        end
+                        
+                        SUBBE:
+                        begin
+                            mux_sig    = E_M;
+                            pc_sig  <= pc_inc;
+                            alu_sig    <= SUB;
+                            load_decode_sig<= none_D;
+                            incac      <= inc_off;
+                            iram_fetch  <= iram_fetch_off;
+                            dram_read  <= DRAM_read_off;
+                            dram_write <= DRAM_write_off; 
+                            state      <= FETCH1 ; 
+                        end
+                        
+                        DIV2:
+                        begin
+                            mux_sig    = none_M;
+                            pc_sig  <= pc_inc;
+                            alu_sig    <= RSHIFT1;
+                            load_decode_sig<= none_D;
+                            incac      <= inc_off;
+                            iram_fetch  <= iram_fetch_off;
+                            dram_read  <= DRAM_read_off;
+                            dram_write <= DRAM_write_off; 
+                            state      <= FETCH1 ; 
+                        end
+                        
+                        DIV16:
+                        begin
+                            mux_sig    = none_M;
+                            pc_sig  <= pc_inc;
+                            alu_sig    <= RSHIFT4;
+                            load_decode_sig<= none_D;
+                            incac      <= inc_off;
+                            iram_fetch  <= iram_fetch_off;
+                            dram_read  <= DRAM_read_off;
+                            dram_write <= DRAM_write_off; 
+                            state      <= FETCH1 ; 
+                        end
+                        
+                        MUL2:
+                        begin
+                            mux_sig    = none_M;
+                            pc_sig  <= pc_inc;
+                            alu_sig    <= LSHIFT1;
+                            load_decode_sig<= none_D;
+                            incac      <= inc_off;
+                            iram_fetch  <= iram_fetch_off;
+                            dram_read  <= DRAM_read_off;
+                            dram_write <= DRAM_write_off; 
+                            state      <= FETCH1 ; 
+                        end
+                        
+                        MUL4:
+                        begin
+                            mux_sig    = none_M;
+                            pc_sig  <= pc_inc;
+                            alu_sig    <= LSHIFT2;
+                            load_decode_sig<= none_D;
+                            incac      <= inc_off;
+                            iram_fetch  <= iram_fetch_off;
+                            dram_read  <= DRAM_read_off;
+                            dram_write <= DRAM_write_off; 
+                            state      <= FETCH1 ; 
+                        end
+                        
+                        MULL:
+                        begin
+                            mux_sig    = none_M;
+                            pc_sig  <= pc_inc;
+                            alu_sig    <= LSHIFT8;
+                            load_decode_sig<= none_D;
+                            incac      <= inc_off;
+                            iram_fetch  <= iram_fetch_off;
+                            dram_read  <= DRAM_read_off;
+                            dram_write <= DRAM_write_off; 
+                            state      <= FETCH1 ; 
+                        end
+                        
+                        ADDR1:
+                        begin
+                            mux_sig    = R1_M;
+                            pc_sig  <= pc_inc;
+                            alu_sig    <= ADD;
+                            load_decode_sig<= none_D;
+                            incac      <= inc_off;
+                            iram_fetch  <= iram_fetch_off;
+                            dram_read  <= DRAM_read_off;
+                            dram_write <= DRAM_write_off; 
+                            state      <= FETCH1 ; 
+                        end
+                        
+                        ADDR3:
+                        begin
+                            mux_sig    = R3_M;
+                            pc_sig  <= pc_inc;
+                            alu_sig    <= ADD;
+                            load_decode_sig<= none_D;
+                            incac      <= inc_off;
+                            iram_fetch  <= iram_fetch_off;
+                            dram_read  <= DRAM_read_off;
+                            dram_write <= DRAM_write_off; 
+                            state      <= FETCH1 ; 
+                        end
+                        
+                        ADDL:
+                        begin
+                            mux_sig    = L_M;
+                            pc_sig  <= pc_inc;
+                            alu_sig    <= ADD;
+                            load_decode_sig<= none_D;
+                            incac      <= inc_off;
+                            iram_fetch  <= iram_fetch_off;
+                            dram_read  <= DRAM_read_off;
+                            dram_write <= DRAM_write_off; 
+                            state      <= FETCH1 ; 
+                        end
+                        
+                        MVACL:
+                        begin
+                            mux_sig    = none_M;
+                            pc_sig  <= pc_inc;
+                            alu_sig    <= none_ALU;
+                            load_decode_sig<= L_D;
+                            incac      <= inc_off;
+                            iram_fetch  <= iram_fetch_off;
+                            dram_read  <= DRAM_read_off;
+                            dram_write <= DRAM_write_off; 
+                            state      <= FETCH1 ; 
+                        end
+                        
+                        MVACE:
+                        begin
+                            mux_sig    = none_M;
+                            pc_sig  <= pc_inc;
+                            alu_sig    <= none_ALU;
+                            load_decode_sig<= E_D;
+                            incac      <= inc_off;
+                            iram_fetch  <= iram_fetch_off;
+                            dram_read  <= DRAM_read_off;
+                            dram_write <= DRAM_write_off; 
+                            state      <= FETCH1 ; 
+                        end
+                        
+                        MVACR1:
+                        begin
+                            mux_sig    = none_M;
+                            pc_sig  <= pc_inc;
+                            alu_sig    <= none_ALU;
+                            load_decode_sig<= R1_D;
+                            incac      <= inc_off;
+                            iram_fetch  <= iram_fetch_off;
+                            dram_read  <= DRAM_read_off;
+                            dram_write <= DRAM_write_off; 
+                            state      <= FETCH1 ; 
+                        end
+                        
+                        MVACR2:
+                        begin
+                            mux_sig    = none_M;
+                            pc_sig  <= pc_inc;
+                            alu_sig    <= none_ALU;
+                            load_decode_sig<= R2_D;
+                            incac      <= inc_off;
+                            iram_fetch  <= iram_fetch_off;
+                            dram_read  <= DRAM_read_off;
+                            dram_write <= DRAM_write_off; 
+                            state      <= FETCH1 ; 
+                        end
+                        
+                        MVACR3:
+                        begin
+                            mux_sig    = none_M;
+                            pc_sig  <= pc_inc;
+                            alu_sig    <= none_ALU;
+                            load_decode_sig<= R3_D;
+                            incac      <= inc_off;
+                            iram_fetch  <= iram_fetch_off;
+                            dram_read  <= DRAM_read_off;
+                            dram_write <= DRAM_write_off; 
+                            state      <= FETCH1 ; 
+                        end
+                        
+                        MVACR4:
+                        begin
+                            mux_sig    = none_M;
+                            pc_sig  <= pc_inc;
+                            alu_sig    <= none_ALU;
+                            load_decode_sig<= R4_D;
+                            incac      <= inc_off;
+                            iram_fetch  <= iram_fetch_off;
+                            dram_read  <= DRAM_read_off;
+                            dram_write <= DRAM_write_off; 
+                            state      <= FETCH1 ; 
+                        end
+                        
+                        MVACAR:
+                        begin
+                            mux_sig    = none_M;
+                            pc_sig  <= pc_inc;
+                            alu_sig    <= none_ALU;
+                            load_decode_sig<= MAR_D;
+                            incac      <= inc_off;
+                            iram_fetch  <= iram_fetch_off;
+                            dram_read  <= DRAM_read_off;
+                            dram_write <= DRAM_write_off; 
+                            state      <= FETCH1 ; 
+                        end
+                        
+                        MVEAC:
+                        begin
+                            mux_sig    = E_M;
+                            pc_sig  <= pc_inc;
+                            alu_sig    <= PASSBTOC;
+                            load_decode_sig<= none_D;
+                            incac      <= inc_off;
+                            iram_fetch  <= iram_fetch_off;
+                            dram_read  <= DRAM_read_off;
+                            dram_write <= DRAM_write_off; 
+                            state      <= FETCH1 ; 
+                        end
+                        
+                        MVR1AC:
+                        begin
+                            mux_sig    = R1_M;
+                            pc_sig  <= pc_inc;
+                            alu_sig    <= PASSBTOC;
+                            load_decode_sig<= none_D;
+                            incac      <= inc_off;
+                            iram_fetch  <= iram_fetch_off;
+                            dram_read  <= DRAM_read_off;
+                            dram_write <= DRAM_write_off; 
+                            state      <= FETCH1 ; 
+                        end
+                        
+                        MVR2AC:
+                        begin
+                            mux_sig    = R2_M;
+                            pc_sig  <= pc_inc;
+                            alu_sig    <= PASSBTOC;
+                            load_decode_sig<= none_D;
+                            incac      <= inc_off;
+                            iram_fetch  <= iram_fetch_off;
+                            dram_read  <= DRAM_read_off;
+                            dram_write <= DRAM_write_off; 
+                            state      <= FETCH1 ; 
+                        end
+                        
+                        MVR3AC:
+                        begin
+                            mux_sig    = R3_M;
+                            pc_sig  <= pc_inc;
+                            alu_sig    <= PASSBTOC;
+                            load_decode_sig<= none_D;
+                            incac      <= inc_off;
+                            iram_fetch  <= iram_fetch_off;
+                            dram_read  <= DRAM_read_off;
+                            dram_write <= DRAM_write_off; 
+                            state      <= FETCH1 ; 
+                        end
+                        
+                        MVR4AC:
+                        begin
+                            mux_sig    = R4_M;
+                            pc_sig  <= pc_inc;
+                            alu_sig    <= PASSBTOC;
+                            load_decode_sig<= none_D;
+                            incac      <= inc_off;
+                            iram_fetch  <= iram_fetch_off;
+                            dram_read  <= DRAM_read_off;
+                            dram_write <= DRAM_write_off; 
+                            state      <= FETCH1 ; 
+                        end
+                        
+                        JMPZ:
+                        begin
+                        case(Z)
+                        1:
+                        begin
+                            mux_sig    = none_M;
+                            pc_sig  <= pc_inc;
+                            alu_sig    <= none_ALU;
+                            load_decode_sig<= none_D;
+                            incac      <= inc_off;
+                            iram_fetch  <= iram_fetch_off;
+                            dram_read  <= DRAM_read_off;
+                            dram_write <= DRAM_write_off; 
+                            state      <= FETCH1 ;
+                        end 
+                        0:
+                        begin
+                            mux_sig    = none_M;
+                            pc_sig     <= pc_loop;
+                            alu_sig    <= none_ALU;
+                            load_decode_sig<= none_D;
+                            incac      <= inc_off;
+                            iram_fetch  <= iram_fetch_off;
+                            dram_read  <= DRAM_read_off;
+                            dram_write <= DRAM_write_off; 
+                            state      <= FETCH1 ; 
+                        end
+                        endcase
+                        end
+                        
+                        JMPN:
+                        begin
+                        case(Z)
+                        1:
+                        begin
+                            mux_sig    = none_M;
+                            pc_sig     <= pc_inc;
+                            alu_sig    <= none_ALU;
+                            load_decode_sig<= none_D;
+                            incac      <= inc_off;
+                            iram_fetch  <= iram_fetch_off;
+                            dram_read  <= DRAM_read_off;
+                            dram_write <= DRAM_write_off; 
+                            state      <= FETCH1 ; 
+                        end
+                        0:
+                        begin
+                            mux_sig    = none_M;
+                            pc_sig     <= pc_if;
+                            alu_sig    <= none_ALU;
+                            load_decode_sig<= none_D;
+                            incac      <= inc_off;
+                            iram_fetch  <= iram_fetch_off;
+                            dram_read  <= DRAM_read_off;
+                            dram_write <= DRAM_write_off; 
+                            state      <= FETCH1;
+                        end
+                        
+                        endcase
+                        end
+                        
+                        END:
+                        begin
+                            mux_sig    = none_M;
+                            pc_sig     <= pc_default;
+                            alu_sig    <= none_ALU;
+                            load_decode_sig<= none_D;
+                            incac      <= inc_off;
+                            iram_fetch  <= iram_fetch_off;
+                            dram_read  <= DRAM_read_off;
+                            dram_write <= DRAM_write_off; 
+                            state      <= END1;
+                       end
+                                      
+                        endcase
+                     end                    
+                      
+                     LDAC2:
+                     begin
+                            mux_sig    <= MDR_M;
+                            alu_sig    <= PASSBTOC;
+                            load_decode_sig<= none_D;
+                            incac      <= inc_off;
+                            iram_fetch  <= iram_fetch_off;                            
+                            dram_read  <= DRAM_read_off;
+                            dram_write <= DRAM_write_off; 
+                            pc_sig     <= pc_default;
+                            state      <= FETCH1;                      
+                     end
+                     
+                     STAC2:
+                     begin
+                            mux_sig    <= none_M;
+                            alu_sig    <= none_ALU;
+                            load_decode_sig<= none_D;
+                            incac      <= inc_off;
+                            iram_fetch  <= iram_fetch_off;
+                            dram_read  <= DRAM_read_off;
+                            dram_write <= DRAM_write_on; 
+                            pc_sig     <= pc_default;
+                            state      <= FETCH1;
+                     end
+                     
+                     END1:
                      begin
                         mux_sig <= none_M;
                         alu_sig <= none_ALU;
                         load_decode_sig<= none_D;
                         incac<= inc_off;
-                        iram_read <= IRAM_read_off;
-                        iram_write <= IRAM_write_off;
+                        iram_fetch <= iram_fetch_off;
+                        
                         dram_read <= DRAM_read_off;
                         dram_write <= DRAM_write_off;    
                         if (start_sig)	
@@ -245,14 +635,13 @@ module ControlUnit(
                                  else 
                                  begin
                                      pc_sig <= pc_default;
-                                     state <= END;
+                                     state <= END1;
                                  end
-                                 end
+                      end
                       endcase
 end
 
-                     
 
                      
                       
-endmodule      
+endmodule

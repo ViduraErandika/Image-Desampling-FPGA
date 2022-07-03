@@ -14,7 +14,7 @@ module Memory(
     $readmemh("instructionhexfile.txt",memory);
     end
 	
-	always @(posedge clk) begin
+	always @(fetch) begin
 		if (fetch) d = {10'd0,memory[address]};
 	end
 	

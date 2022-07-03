@@ -1,0 +1,20 @@
+[0704/004224:WARNING:backend_impl.cc(1807)] Destroying invalid entry.
+[0704/004227:INFO:CONSOLE(0)] "Unrecognized Content-Security-Policy directive 'prefetch-src'.
+", source: https://www.altium.com/ad-start/ (0)
+[0704/004227:INFO:CONSOLE(0)] "The source list for Content Security Policy directive 'script-src' contains an invalid source: ''report-sample''. It will be ignored.", source: https://www.altium.com/ad-start/ (0)
+[0704/004227:INFO:CONSOLE(0)] "Unrecognized Content-Security-Policy directive 'worker-src'.
+", source: https://www.altium.com/ad-start/ (0)
+[0704/004233:ERROR:tcp_socket_win.cc(335)] bind() returned an error: Only one usage of each socket address (protocol/network address/port) is normally permitted. (0x2740)
+[0704/004233:ERROR:devtools_http_handler.cc(229)] Cannot start http server for devtools. Stop devtools.
+[0704/004237:ERROR:cache_util_win.cc(20)] Unable to move the cache: 5
+[0704/004237:ERROR:cache_util.cc(134)] Unable to move cache folder C:\ProgramData\Altium\Altium Designer {7A898CD3-0223-4D91-982C-9BD485D56257}\BrowserCache\GPUCache to C:\ProgramData\Altium\Altium Designer {7A898CD3-0223-4D91-982C-9BD485D56257}\BrowserCache\old_GPUCache_000
+[0704/004237:ERROR:cache_creator.cc(129)] Unable to create cache
+[0704/004237:ERROR:shader_disk_cache.cc(589)] Shader Cache Creation failed: -2
+[0704/004237:ERROR:cache_util_win.cc(20)] Unable to move the cache: 5
+[0704/004237:ERROR:cache_util.cc(134)] Unable to move cache folder C:\ProgramData\Altium\Altium Designer {7A898CD3-0223-4D91-982C-9BD485D56257}\BrowserCache to C:\ProgramData\Altium\Altium Designer {7A898CD3-0223-4D91-982C-9BD485D56257}\old_BrowserCache_000
+[0704/004237:ERROR:cache_creator.cc(129)] Unable to create cache
+[0704/004240:INFO:CONSOLE(0)] "Unrecognized Content-Security-Policy directive 'prefetch-src'.
+", source: https://www.altium.com/ad-start/ (0)
+[0704/004240:INFO:CONSOLE(0)] "The source list for Content Security Policy directive 'script-src' contains an invalid source: ''report-sample''. It will be ignored.", source: https://www.altium.com/ad-start/ (0)
+[0704/004240:INFO:CONSOLE(0)] "Unrecognized Content-Security-Policy directive 'worker-src'.
+", source: https://www.altium.com/ad-start/ (0)

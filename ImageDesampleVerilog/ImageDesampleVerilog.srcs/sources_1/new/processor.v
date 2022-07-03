@@ -22,7 +22,6 @@ module processor(
 	Register R4(.clk(clk), .LDsignal(lr4), .Din(C), .Dout(r4));
 	Register R5(.clk(clk), .LDsignal(lr5), .Din(C), .Dout(r5));
 	Register AR(.clk(clk), .LDsignal(lar), .Din(C), .Dout(ar));
-	Register IR(.clk(clk), .LDsignal(lir), .Din(pram), .Dout(ir));
 	
 	SRegister AC(.clk(clk), .LDsignal(lac), .Din(C), .Dout(ac), .inc(incac), .reset(resetac));
 	SRegister PC(.clk(clk), .LDsignal(lpc), .Din(C), .Dout(pc), .inc(incpc), .reset(resetpc));
@@ -39,6 +38,7 @@ module processor(
 							.operation(operation), .read(read), .write(write), .endp(endp), .incac(incac), .incpc(incpc),
 							.resetac(resetac), .resetpc(resetpc));
 							
+	MBRURegister mbru(.Din(pram),.Dout(ir));						
 	assign arout = ar; //address to the Dram.
 	assign pcout = pc; // address to the Pram.
 	assign acout = ac;//data input to the Dram

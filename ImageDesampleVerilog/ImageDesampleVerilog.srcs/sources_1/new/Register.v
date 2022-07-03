@@ -8,7 +8,7 @@ module Register(
 	reg [17:0] d;
 	assign Dout = d;
 	
-	always @(posedge clk) begin
+	always @(negedge clk) begin
 		if (LDsignal) d<=Din;
 	end
 endmodule 
