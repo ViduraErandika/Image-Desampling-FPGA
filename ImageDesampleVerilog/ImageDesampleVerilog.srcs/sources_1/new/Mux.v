@@ -12,7 +12,8 @@ module Mux(
 				  E    = 4'b0100,
 				  MBRU = 4'b0011,
 				  PC   = 4'b0010,
-				  MDR  = 4'b0001;
+				  MDR  = 4'b0001,
+				  none_M= 4'b0000;
 				  
 				  
 	reg [17:0] data;
@@ -29,6 +30,7 @@ module Mux(
 			MBRU : data = mbru;
 			PC : data = pc;
 			MDR : data = mdr;
+			none_M : data = 4'b0000;
 			default : data = 4'b0000;
 		endcase
 		end
