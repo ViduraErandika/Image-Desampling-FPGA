@@ -1,18 +1,17 @@
 module Decoder(
-	input wire [8:0] select,
-	output wire r1,r2,r3,r4,l,e,pc,mdr,mar
+	input wire [7:0] select,
+	output wire r1,r2,r3,r4,l,e,mdr,mar
 	);
 	
-	localparam    MAR     = 9'b100000000,
-                  MDR     = 9'b010000000,
-                  PC      = 9'b001000000,
-                  L       = 9'b000100000,
-                  R1      = 9'b000010000,
-                  R2      = 9'b000001000,
-                  R3      = 9'b000000100,
-                  R4      = 9'b000000010,
-                  E       = 9'b000000001,
-                  none_D = 9'b000000000;
+	localparam    MAR     = 8'b10000000,
+                  MDR     = 8'b01000000,
+                  L      = 8'b00100000,
+                  R1       = 8'b00010000,
+                  R2      = 8'b00001000,
+                  R3      = 8'b00000100,
+                  R4      = 8'b00000010,
+                  E      = 8'b00000001,
+                  none_D = 8'b00000000;
 				  
 				  
 				  
@@ -22,7 +21,6 @@ module Decoder(
 	assign r4 = (select == R4)? 1'b1 : 0;
 	assign l = (select == L)? 1'b1 : 0;
 	assign e = (select == E)? 1'b1 : 0;
-	assign pc = (select == PC)? 1'b1 : 0;
 	assign mdr = (select == MDR)? 1'b1 : 0;
 	assign mar = (select == MAR)? 1'b1 : 0;
 	

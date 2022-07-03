@@ -36,28 +36,25 @@ module ControlUnit(
                   RESET    = 4'b1011;
                   
     // MUX parameters
-    localparam   none_M = 4'b0000, 
-                 R1_M  = 4'b0110,
-                 R2_M  = 4'b0111,
-                 R3_M  = 4'b1000,
-                 R4_M   = 4'b1001,
-                 L_M    = 4'b0101,
-                 E_M    = 4'b0100,
-                 MBRU_M = 4'b0011,
-                 PC_M   = 4'b0010,
-                 MDR_M  = 4'b0001;
+	localparam   R1_M   = 4'b1000,
+                  R2_M    = 4'b1001,
+                  R3_M     = 4'b0101,
+                  R4_M     = 4'b0100,
+                  L_M  = 4'b0011,
+                  E_M    = 4'b0010,
+                  MDR_M   = 4'b0001,
+                  none_M= 4'b0000;
                  
    //Decoder parameters
-   localparam    none_D= 9'b000000000,
-                 MAR_D  = 9'b100000000,
-                 MDR_D  = 9'b010000000,
-                 PC_D   = 9'b001000000,
-                 L_D    = 9'b000100000,
-                 R1_D   = 9'b000010000,
-                 R2_D   = 9'b000001000,
-                 R3_D   = 9'b000000100,
-                 R4_D   = 9'b000000010,
-                 E_D    = 9'b000000001;
+	localparam    MAR_D     = 8'b10000000,
+                 MDR_D     = 8'b01000000,
+                 L_D     = 8'b00100000,
+                 R1_D       = 8'b00010000,
+                 R2_D      = 8'b00001000,
+                 R3_D      = 8'b00000100,
+                 R4_D      = 8'b00000010,
+                 E_D      = 8'b00000001,
+                 none_D = 8'b00000000;
                 
    //PC parameters
   localparam    pc_reset= 3'b000,
