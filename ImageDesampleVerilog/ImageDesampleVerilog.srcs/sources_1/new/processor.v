@@ -1,10 +1,11 @@
 module processor(
-	input wire [17:0] iram,dram,
+	input wire [17:0] iram,dram, //data from iram and dram
 	input wire start,
 	input wire clk,
 	output wire read,write,
-	output wire [17:0] pcout,
-	output wire [17:0] marOut,mdrOut,
+	output wire [17:0] pcout,  // address to the Iram.
+	output wire [17:0] marOut, //address to the Dram
+	output wire[17:0] mdrOut,   //data input to the Dram
 	output wire fetch
 	);
 	
@@ -51,8 +52,8 @@ module processor(
 	assign marOut = mar;   //address to the Dram.
 	assign pcout = pc;     // address to the Iram.
 	assign mdrOut = mdr_out;   //data input to the Dram
-	assign iram = iramIn;
-	assign dram = dramIn;
+	assign iram = iramIn;  //data from iram
+	assign dram = dramIn;  //data from dram
 	
 endmodule
 	

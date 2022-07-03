@@ -2,70 +2,23 @@
 
 module TopModule(
 	input wire clk,
-	input wire start,
-	output wire end1,
-	output wire [7:0] s
+	input wire start
 	);
-	
-	wire readp,writep,endp;
-	wire read,write;
-	wire [15:0] pram,dram,acout,arout,pcout;
-	wire [15:0] address;
-	reg startp = 0;
-	reg startt = 0;
-	wire [15:0] din;
-	
-	wire s_tick;
-	wire [15:0] addr;
-	reg readu = 0;
-	reg writeu = 1;
-	
-	reg [16:0] count  = 0;
-	reg [16:0] countn = 0;
-	reg [1:0] state   = 2'b00;
-	reg [1:0] staten  = 2'b00;
-	
-	localparam nope  = 2'b11,
-	           pros  = 2'b01;
-	
-	assign address = arout;
-    assign read    = readp;
-    assign write   = writep;
-    assign din     = acout;
-	
-	DMemory Dram(.clk(clk), .read(read), .write(write), .Din(din), .Dout(dram), .address(address));
-	Memory Iram(.clk(clk), .read(read), .write(0), .Din(0), .Dout(pram), .address(pcout));
-	
-	processor Pro(.pram(pram), .dram(dram), .start(startp), .clk(clk), .read(readp), .write(writep),
-					.acout(acout), .arout(arout), .pcout(pcout), .endp(endp));
-	
-	
-	
-	assign addr = count;
-	
-	//assign s=acout;
-	assign end1=endp;
-	
-always @(posedge clk) begin
-	//s = acout;
-	state = staten;
-	count = countn;
-	case (state) 
-		pros : begin
-			if(endp) begin
-				writeu = 0;
-				readu  = 1;
-				startp = 0;
-				startt = 1;
-				countn = 0;
-				count  = 0;
-			end
-		end
-		
-		nope : staten = nope;
-	endcase
+	 wire [17:0] iram,dram;    //data from iram and dram
+     wire read,write;
+     wire [17:0] pcout; // address to the Iram.
+     wire [17:0] marOut;    //address to the Dram
+     wire [17:0] mdrOut;   //data input to the Dram
+     wire fetch;
 
-end
+	
+	DMemory Dram(.clk(clk), .read(read), .write(write), .Din(mdrOut), .Dout(dram), .address(marOut));
+	Memory Iram(.clk(clk), .fetch(fetch), .Dout(iram), .address(pcout));
+	
+	processor Pro(.iram(iram), .dram(dram), .start(start), .clk(clk), .read(read), .write(write),
+					.pcout(pcout), .marOut(marOut), .mdrOut(mdrOut), .fetch(fetch));
+	
+	
 
 					
 endmodule	
