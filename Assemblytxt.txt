@@ -6,16 +6,14 @@ MVACL			//L<-AC         (L=256: Length of one image side)
 MVACE           //E<-AC
 MVACR1          //R1<-AC
 MULL            //AC<AC*L       (AC=256*256)
-MVACR4          //R4<AC         (R4 = 256+256) 
+MVACR4          //R4<AC         (R4 = 256*256) 
 SUBL            //AC<AC-L       (AC=256*256-256)
-DCAC            //AC<AC-1
-DCAC            //AC<AC-1
-DCAC            //AC<AC-1
-MVACL			//L<-AC         (L=256*256-(256-1-2))
+INAC            //AC<AC+1       (AC=256*256-256+1)
+MVACL			//L<-AC         (L=256*256-(256-2)-1))  
 MVEAC           //AC<-E
 DIV2            //AC/2
 INAC			//AC<-AC+1
-MVACE           //E<-AC       E=129
+MVACE           //E<-AC         E=129
 
 MVR1AC			//AC<-R1
 INAC			//AC<-AC+1  AC=257
@@ -128,31 +126,33 @@ L1
     MVR2AC 			//AC<-R2            j=1
     INAC			//AC<-AC+1          
     MVACR2 			//R2<AC             j=j+1
-    MVR1AC 			//AC<-R1
-    INAC			//AC<-AC+1
-    INAC			//AC<-AC+1          
-    MVACR1 			//R1<AC             //i=i+2
 
     MVR2AC 			//AC<-R2 
     SUBBE           //AC<E-AC  if(E-AC==0) Then Z=1 Else Z=0  
-    JMPN            //If Z==0 THEN GOTO L2
+    JMPN  L2          //If Z==0 THEN GOTO L2
         INAC			//AC<-AC+1
         MVACR2 			//R2<AC     j=1;
         INAC			//AC<-AC+1
         INAC			//AC<-AC+1
         INAC			//AC<-AC+1
-        ADDL            //AC<AC+L   AC=256+4
+        ADD256            //AC<AC+256   AC=256+4
         ADDR1           //AC<AC+R1
         MVACR1 			//R1<AC     i=i+256+4
     L2
 
+    MVR1AC 			//AC<-R1
+    INAC			//AC<-AC+1
+    INAC			//AC<-AC+1          
+    MVACR1 			//R1<AC             //i=i+2
+
     SUBL			//AC<AC-L IF(AC-L)==0, Then Z=1; Else Z=0;
-    JMPZ			//If Z==0 THEN GOTO L1       
+    JMPZ			//If Z==0 THEN GOTO L1 
+    L1      
 END
 
 
 
-L = ((256+2)*(256+2))-(256+2)-1
+L = ((256)*(256))-(256-2)-1
 E = 129 = j
 R1 = i
 R2 = J
