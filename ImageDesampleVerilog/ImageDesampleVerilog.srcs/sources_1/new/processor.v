@@ -8,6 +8,8 @@ module processor(
 	output wire[17:0] mdrOut,   //data input to the Dram
 	output wire fetch
 	);
+	wire negclk;
+	assign negclk  = ~clk;
 	
 	wire [17:0] A, B, C;
 	wire [3:0] M_select ;
@@ -22,17 +24,17 @@ module processor(
 	wire [17:0] mar,pc,mdr_out, iramIn, dramIn;
 	wire [17:0] irCU;
 	
-	Register R1(.clk(clk), .LDsignal(lr1), .Din(C), .Dout(Mr1));
-	Register R2(.clk(clk), .LDsignal(lr2), .Din(C), .Dout(Mr2));
-	Register R3(.clk(clk), .LDsignal(lr3), .Din(C), .Dout(Mr3));
-	Register R4(.clk(clk), .LDsignal(lr4), .Din(C), .Dout(Mr4));
-	Register L(.clk(clk), .LDsignal(ll), .Din(C), .Dout(Ml));
-	Register E(.clk(clk), .LDsignal(le), .Din(C), .Dout(Me));
+	Register R1(.clk(negclk), .LDsignal(lr1), .Din(C), .Dout(Mr1));
+	Register R2(.clk(negclk), .LDsignal(lr2), .Din(C), .Dout(Mr2));
+	Register R3(.clk(negclk), .LDsignal(lr3), .Din(C), .Dout(Mr3));
+	Register R4(.clk(negclk), .LDsignal(lr4), .Din(C), .Dout(Mr4));
+	Register L(.clk(negclk), .LDsignal(ll), .Din(C), .Dout(Ml));
+	Register E(.clk(negclk), .LDsignal(le), .Din(C), .Dout(Me));
 	
-	Register MAR(.clk(clk), .LDsignal(lmar), .Din(C), .Dout(mar));
+	Register MAR(.clk(negclk), .LDsignal(lmar), .Din(C), .Dout(mar));
 	PCRegister PC(.clk(clk),.Din(PC_select), .Dout(pc));
 	MOutRegister mbru(.Din(iramIn),.Dout(irCU));
-    MDRegister mdr(.clk(clk),.DramIn(dramIn),.Din(C), .Dout(Mmdr), .DramOut(mdr_out));
+    MDRegister mdr(.clk(negclk),.DramIn(dramIn),.Din(C), .Dout(Mmdr), .DramOut(mdr_out));
 	
 	SRegister AC(.clk(clk), .Din(aluOut), .Dout(C), .inc(incac));
 	

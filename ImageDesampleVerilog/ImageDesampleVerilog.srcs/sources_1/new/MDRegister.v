@@ -16,7 +16,7 @@ always @(DramIn) begin
     Bbus<=DramIn;
 end
 
-always @(negedge clk) begin
+always @(posedge clk) begin
     d<=Din;
 end
 endmodule 

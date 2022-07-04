@@ -9,9 +9,14 @@ module Memory(
 	reg [17:0] d;
 	
 	assign Dout = d;
+	//integer i;
 	
 	initial begin
-    $readmemh("instructionhexfile.txt",memory);
+    $readmemh("D:\\FPGA_Development\\Image-Desampling-FPGA\\instructionhexfile.txt",memory);
+
+//    for(i=0; i<135 ; i=i+1)begin
+//        $display("%h",memory[i]);
+//    end
     end
 	
 	always @(fetch) begin

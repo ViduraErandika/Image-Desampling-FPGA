@@ -11,8 +11,9 @@ module DMemory(
 	reg [17:0] d;
 	assign Dout = d;
 	
-	integer file_id;
+	reg [17:0] ADDRESS;
 	
+	integer file_id;
 	
 	initial
 	begin
@@ -20,11 +21,14 @@ module DMemory(
 	$readmemh("D:\\FPGA_Development\\Image-Desampling-FPGA\\imageArrayhexfile.txt",memory);
 	end
 	
+	always @(address)begin
+        ADDRESS <= address;	
+	end
 	
 	always @(posedge clk) begin
-		if (read) d = {10'd0,memory[address]};
-		else if (write) begin
-		memory[address] = Din[7:0];
+		if (read) d = {10'd0,memory[ADDRESS]};
+		else if (write)begin
+		memory[ADDRESS] = Din[7:0];
 		$fwrite(file_id,"%d",Din[7:0]);
 		end
 	end
