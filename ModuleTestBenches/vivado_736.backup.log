@@ -1,0 +1,1220 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Mon Jul  4 11:24:20 2022
+# Process ID: 736
+# Current directory: D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent16116 D:\FPGA_Development\Image-Desampling-FPGA\ModuleTestBenches\TempProject.xpr
+# Log file: D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/vivado.log
+# Journal file: D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.xpr
+INFO: [Project 1-313] Project file moved from 'D:/FPGA_Development/TempProject' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.2/data/ip'.
+open_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:05 . Memory (MB): peak = 781.191 ; gain = 53.055
+update_compile_order -fileset sources_1
+set_property is_enabled true [get_files  D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sim_1/imports/new/alu_tb.v]
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'alu_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj alu_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sim_1/imports/new/alu_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alu_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto 9128b449f66d41ad943581e246ffc12b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot alu_tb_behav xil_defaultlib.alu_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/ALU.v" Line 1. Module ALU doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.alu_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot alu_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "alu_tb_behav -key {Behavioral:sim_1:Functional:alu_tb} -tclbatch {alu_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+source alu_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'alu_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:05 ; elapsed = 00:00:12 . Memory (MB): peak = 844.457 ; gain = 2.820
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'alu_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj alu_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sim_1/imports/new/alu_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alu_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto 9128b449f66d41ad943581e246ffc12b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot alu_tb_behav xil_defaultlib.alu_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/ALU.v" Line 1. Module ALU doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.alu_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot alu_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "alu_tb_behav -key {Behavioral:sim_1:Functional:alu_tb} -tclbatch {alu_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+source alu_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'alu_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 870.699 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'alu_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj alu_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sim_1/imports/new/alu_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alu_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto 9128b449f66d41ad943581e246ffc12b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot alu_tb_behav xil_defaultlib.alu_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/ALU.v" Line 1. Module ALU doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.alu_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot alu_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "alu_tb_behav -key {Behavioral:sim_1:Functional:alu_tb} -tclbatch {alu_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+source alu_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'alu_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 870.699 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'alu_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj alu_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sim_1/imports/new/alu_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alu_tb
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto 9128b449f66d41ad943581e246ffc12b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot alu_tb_behav xil_defaultlib.alu_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/ALU.v" Line 1. Module ALU doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.alu_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot alu_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "alu_tb_behav -key {Behavioral:sim_1:Functional:alu_tb} -tclbatch {alu_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+source alu_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'alu_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 872.340 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+set_property is_enabled false [get_files  D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sim_1/imports/new/alu_tb.v]
+set_property is_enabled true [get_files  D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sim_1/new/reg_tb.v]
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'reg_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj reg_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/Register.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Register
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sim_1/new/reg_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module reg_tb
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto 9128b449f66d41ad943581e246ffc12b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot reg_tb_behav xil_defaultlib.reg_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/Register.v" Line 1. Module Register doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.Register
+Compiling module xil_defaultlib.reg_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot reg_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "reg_tb_behav -key {Behavioral:sim_1:Functional:reg_tb} -tclbatch {reg_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+source reg_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'reg_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 873.367 ; gain = 1.027
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'reg_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj reg_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/Register.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Register
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sim_1/new/reg_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module reg_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto 9128b449f66d41ad943581e246ffc12b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot reg_tb_behav xil_defaultlib.reg_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/Register.v" Line 1. Module Register doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.Register
+Compiling module xil_defaultlib.reg_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot reg_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "reg_tb_behav -key {Behavioral:sim_1:Functional:reg_tb} -tclbatch {reg_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+source reg_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'reg_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 874.539 ; gain = 0.039
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'reg_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj reg_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/Register.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Register
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sim_1/new/reg_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module reg_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto 9128b449f66d41ad943581e246ffc12b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot reg_tb_behav xil_defaultlib.reg_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/Register.v" Line 1. Module Register doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.Register
+Compiling module xil_defaultlib.reg_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot reg_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "reg_tb_behav -key {Behavioral:sim_1:Functional:reg_tb} -tclbatch {reg_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+source reg_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'reg_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 877.965 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+set_property is_enabled false [get_files  D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sim_1/new/reg_tb.v]
+set_property is_enabled true [get_files  D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sim_1/new/sreg_tb.v]
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'sreg_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj sreg_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/SRegister.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SRegister
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sim_1/new/sreg_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sreg_tb
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto 9128b449f66d41ad943581e246ffc12b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot sreg_tb_behav xil_defaultlib.sreg_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/SRegister.v" Line 1. Module SRegister doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.SRegister
+Compiling module xil_defaultlib.sreg_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot sreg_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "sreg_tb_behav -key {Behavioral:sim_1:Functional:sreg_tb} -tclbatch {sreg_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+source sreg_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'sreg_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 879.836 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+set_property is_enabled true [get_files  D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sim_1/new/mux_tb.v]
+update_compile_order -fileset sim_1
+set_property is_enabled false [get_files  D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sim_1/new/sreg_tb.v]
+update_compile_order -fileset sim_1
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'mux_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj mux_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/Mux.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Mux
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sim_1/new/mux_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux_tb
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 879.836 ; gain = 0.000
+INFO: [USF-XSim-69] 'compile' step finished in '6' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto 9128b449f66d41ad943581e246ffc12b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot mux_tb_behav xil_defaultlib.mux_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/Mux.v" Line 1. Module Mux doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.Mux
+Compiling module xil_defaultlib.mux_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot mux_tb_behav
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 879.836 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '7' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "mux_tb_behav -key {Behavioral:sim_1:Functional:mux_tb} -tclbatch {mux_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+source mux_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'mux_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:16 . Memory (MB): peak = 882.688 ; gain = 2.852
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'mux_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj mux_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/Mux.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Mux
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sim_1/new/mux_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux_tb
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 883.332 ; gain = 0.000
+INFO: [USF-XSim-69] 'compile' step finished in '5' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto 9128b449f66d41ad943581e246ffc12b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot mux_tb_behav xil_defaultlib.mux_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/Mux.v" Line 1. Module Mux doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.Mux
+Compiling module xil_defaultlib.mux_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot mux_tb_behav
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 883.332 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '7' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "mux_tb_behav -key {Behavioral:sim_1:Functional:mux_tb} -tclbatch {mux_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+source mux_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'mux_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:15 . Memory (MB): peak = 884.125 ; gain = 0.793
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+set_property is_enabled false [get_files  D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sim_1/new/mux_tb.v]
+set_property is_enabled true [get_files  D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sim_1/new/mem_tb.v]
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'mem_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj mem_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/Memory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Memory
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sim_1/new/mem_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mem_tb
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 884.270 ; gain = 0.000
+INFO: [USF-XSim-69] 'compile' step finished in '6' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto 9128b449f66d41ad943581e246ffc12b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot mem_tb_behav xil_defaultlib.mem_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/Memory.v" Line 1. Module Memory doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.Memory
+Compiling module xil_defaultlib.mem_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot mem_tb_behav
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 884.270 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "mem_tb_behav -key {Behavioral:sim_1:Functional:mem_tb} -tclbatch {mem_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+source mem_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'mem_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:16 . Memory (MB): peak = 885.895 ; gain = 1.625
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'mem_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj mem_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/Memory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Memory
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sim_1/new/mem_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mem_tb
+INFO: [USF-XSim-69] 'compile' step finished in '5' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto 9128b449f66d41ad943581e246ffc12b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot mem_tb_behav xil_defaultlib.mem_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/Memory.v" Line 1. Module Memory doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.Memory
+Compiling module xil_defaultlib.mem_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot mem_tb_behav
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 885.895 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '7' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "mem_tb_behav -key {Behavioral:sim_1:Functional:mem_tb} -tclbatch {mem_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+source mem_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'mem_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:15 . Memory (MB): peak = 886.418 ; gain = 0.523
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'mem_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj mem_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/Memory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Memory
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sim_1/new/mem_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mem_tb
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 886.773 ; gain = 0.000
+INFO: [USF-XSim-69] 'compile' step finished in '5' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto 9128b449f66d41ad943581e246ffc12b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot mem_tb_behav xil_defaultlib.mem_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/Memory.v" Line 1. Module Memory doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.Memory
+Compiling module xil_defaultlib.mem_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot mem_tb_behav
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 886.773 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "mem_tb_behav -key {Behavioral:sim_1:Functional:mem_tb} -tclbatch {mem_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+source mem_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'mem_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:15 . Memory (MB): peak = 887.406 ; gain = 0.633
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'mem_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj mem_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/Memory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Memory
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sim_1/new/mem_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mem_tb
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 891.750 ; gain = 0.000
+INFO: [USF-XSim-69] 'compile' step finished in '5' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto 9128b449f66d41ad943581e246ffc12b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot mem_tb_behav xil_defaultlib.mem_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/Memory.v" Line 1. Module Memory doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.Memory
+Compiling module xil_defaultlib.mem_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot mem_tb_behav
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 891.750 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '7' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "mem_tb_behav -key {Behavioral:sim_1:Functional:mem_tb} -tclbatch {mem_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+source mem_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'mem_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:16 . Memory (MB): peak = 897.320 ; gain = 5.570
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+set_property is_enabled false [get_files  D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sim_1/new/mem_tb.v]
+set_property is_enabled true [get_files  D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sim_1/new/dmem_tb.v]
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+set_property is_enabled false [get_files  D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sim_1/new/dmem_tb.v]
+set_property is_enabled true [get_files  D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sim_1/new/mem_tb.v]
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'mem_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj mem_tb_vlog.prj"
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 899.164 ; gain = 0.000
+INFO: [USF-XSim-69] 'compile' step finished in '5' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto 9128b449f66d41ad943581e246ffc12b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot mem_tb_behav xil_defaultlib.mem_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 899.164 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "mem_tb_behav -key {Behavioral:sim_1:Functional:mem_tb} -tclbatch {mem_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+source mem_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'mem_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:05 ; elapsed = 00:00:15 . Memory (MB): peak = 900.805 ; gain = 1.641
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+set_property is_enabled false [get_files  D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sim_1/new/mem_tb.v]
+set_property is_enabled true [get_files  D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sim_1/new/dmem_tb.v]
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'dmem_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj dmem_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/DMemory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DMemory
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sim_1/new/dmem_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module dmem_tb
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 902.070 ; gain = 0.000
+INFO: [USF-XSim-69] 'compile' step finished in '6' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto 9128b449f66d41ad943581e246ffc12b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot dmem_tb_behav xil_defaultlib.dmem_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/DMemory.v" Line 1. Module DMemory doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.DMemory
+Compiling module xil_defaultlib.dmem_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot dmem_tb_behav
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 902.070 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '7' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "dmem_tb_behav -key {Behavioral:sim_1:Functional:dmem_tb} -tclbatch {dmem_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+source dmem_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'dmem_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:05 ; elapsed = 00:00:16 . Memory (MB): peak = 903.691 ; gain = 1.621
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+set_property is_enabled false [get_files  D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sim_1/new/dmem_tb.v]
+import_files -norecurse {D:/FPGA_Development/Image-Desampling-FPGA/ImageDesampleVerilog/ImageDesampleVerilog.srcs/sources_1/new/ControlUnit.v D:/FPGA_Development/Image-Desampling-FPGA/ImageDesampleVerilog/ImageDesampleVerilog.srcs/sources_1/new/processor.v D:/FPGA_Development/Image-Desampling-FPGA/ImageDesampleVerilog/ImageDesampleVerilog.srcs/sources_1/new/MDRegister.v D:/FPGA_Development/Image-Desampling-FPGA/ImageDesampleVerilog/ImageDesampleVerilog.srcs/sources_1/new/MOutRegister.v D:/FPGA_Development/Image-Desampling-FPGA/ImageDesampleVerilog/ImageDesampleVerilog.srcs/sources_1/new/PCRegister.v}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sim_1/new/pro_tb.v w ]
+add_files -fileset sim_1 D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sim_1/new/pro_tb.v
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+import_files -norecurse D:/FPGA_Development/Image-Desampling-FPGA/ImageDesampleVerilog/ImageDesampleVerilog.srcs/sources_1/new/testmp.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'pro_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj pro_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/ControlUnit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ControlUnit
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/Decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/MDRegister.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MDRegister
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/MOutRegister.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MOutRegister
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/PCRegister.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PCRegister
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/processor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module processor
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/testmp.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TopModule
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sim_1/new/pro_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pro_tb
+INFO: [USF-XSim-69] 'compile' step finished in '4' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto 9128b449f66d41ad943581e246ffc12b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot pro_tb_behav xil_defaultlib.pro_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-426] cannot find port fetch on this module [D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sim_1/new/pro_tb.v:29]
+ERROR: [VRFC 10-426] cannot find port mdrOut on this module [D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sim_1/new/pro_tb.v:28]
+ERROR: [VRFC 10-426] cannot find port marOut on this module [D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sim_1/new/pro_tb.v:27]
+ERROR: [VRFC 10-426] cannot find port pcout on this module [D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sim_1/new/pro_tb.v:26]
+ERROR: [VRFC 10-426] cannot find port write on this module [D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sim_1/new/pro_tb.v:25]
+ERROR: [VRFC 10-426] cannot find port read on this module [D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sim_1/new/pro_tb.v:24]
+ERROR: [VRFC 10-426] cannot find port dram on this module [D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sim_1/new/pro_tb.v:22]
+ERROR: [VRFC 10-426] cannot find port iram on this module [D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sim_1/new/pro_tb.v:21]
+ERROR: [VRFC 10-2063] Module <DMemory> not found while processing module instance <Dram> [D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/testmp.v:16]
+ERROR: [VRFC 10-2063] Module <Memory> not found while processing module instance <Iram> [D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/testmp.v:17]
+ERROR: [VRFC 10-2063] Module <processor> not found while processing module instance <Pro> [D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/testmp.v:19]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 905.711 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '5' seconds
+INFO: [USF-XSim-99] Step results log file:'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:11 . Memory (MB): peak = 905.711 ; gain = 0.000
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'pro_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj pro_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/ControlUnit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ControlUnit
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/DMemory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DMemory
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/Decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/MDRegister.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MDRegister
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/MOutRegister.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MOutRegister
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/Memory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Memory
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/Mux.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Mux
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/PCRegister.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PCRegister
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/Register.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Register
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/SRegister.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SRegister
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/processor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module processor
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/testmp.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TopModule
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sim_1/new/pro_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pro_tb
+INFO: [USF-XSim-69] 'compile' step finished in '5' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto 9128b449f66d41ad943581e246ffc12b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot pro_tb_behav xil_defaultlib.pro_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-278] actual bit length 3 differs from formal bit length 4 for port Din [D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/processor.v:35]
+WARNING: [VRFC 10-278] actual bit length 8 differs from formal bit length 9 for port load_decode_sig [D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/processor.v:50]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/testmp.v" Line 1. Module TopModule doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/DMemory.v" Line 1. Module DMemory doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/Memory.v" Line 1. Module Memory doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/processor.v" Line 1. Module processor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/Register.v" Line 1. Module Register doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/Register.v" Line 1. Module Register doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/Register.v" Line 1. Module Register doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/Register.v" Line 1. Module Register doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/Register.v" Line 1. Module Register doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/Register.v" Line 1. Module Register doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/Register.v" Line 1. Module Register doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/PCRegister.v" Line 1. Module PCRegister doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/MOutRegister.v" Line 1. Module MOutRegister doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/MDRegister.v" Line 1. Module MDRegister doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/SRegister.v" Line 1. Module SRegister doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/ALU.v" Line 1. Module ALU doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/Mux.v" Line 1. Module Mux doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/Decoder.v" Line 1. Module Decoder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/ControlUnit.v" Line 1. Module ControlUnit doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.DMemory
+Compiling module xil_defaultlib.Memory
+Compiling module xil_defaultlib.Register
+Compiling module xil_defaultlib.PCRegister
+Compiling module xil_defaultlib.MOutRegister
+Compiling module xil_defaultlib.MDRegister
+Compiling module xil_defaultlib.SRegister
+Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.Mux
+Compiling module xil_defaultlib.Decoder
+Compiling module xil_defaultlib.ControlUnit
+Compiling module xil_defaultlib.processor
+Compiling module xil_defaultlib.TopModule
+Compiling module xil_defaultlib.pro_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot pro_tb_behav
+
+****** Webtalk v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim/xsim.dir/pro_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Mon Jul  4 14:47:16 2022...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:18 . Memory (MB): peak = 906.656 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '18' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "pro_tb_behav -key {Behavioral:sim_1:Functional:pro_tb} -tclbatch {pro_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+source pro_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'pro_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:07 ; elapsed = 00:00:27 . Memory (MB): peak = 914.570 ; gain = 7.914
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 914.570 ; gain = 0.000
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'pro_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj pro_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/ControlUnit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ControlUnit
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/DMemory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DMemory
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/Decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/MDRegister.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MDRegister
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/MOutRegister.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MOutRegister
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/Memory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Memory
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/Mux.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Mux
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/PCRegister.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PCRegister
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/Register.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Register
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/SRegister.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SRegister
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/processor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module processor
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/testmp.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TopModule
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sim_1/new/pro_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pro_tb
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 914.570 ; gain = 0.000
+INFO: [USF-XSim-69] 'compile' step finished in '6' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto 9128b449f66d41ad943581e246ffc12b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot pro_tb_behav xil_defaultlib.pro_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-278] actual bit length 3 differs from formal bit length 4 for port Din [D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/processor.v:35]
+WARNING: [VRFC 10-278] actual bit length 8 differs from formal bit length 9 for port load_decode_sig [D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/processor.v:50]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/testmp.v" Line 1. Module TopModule doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/DMemory.v" Line 1. Module DMemory doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/Memory.v" Line 1. Module Memory doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/processor.v" Line 1. Module processor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/Register.v" Line 1. Module Register doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/Register.v" Line 1. Module Register doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/Register.v" Line 1. Module Register doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/Register.v" Line 1. Module Register doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/Register.v" Line 1. Module Register doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/Register.v" Line 1. Module Register doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/Register.v" Line 1. Module Register doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/PCRegister.v" Line 1. Module PCRegister doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/MOutRegister.v" Line 1. Module MOutRegister doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/MDRegister.v" Line 1. Module MDRegister doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/SRegister.v" Line 1. Module SRegister doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/ALU.v" Line 1. Module ALU doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/Mux.v" Line 1. Module Mux doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/Decoder.v" Line 1. Module Decoder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/ControlUnit.v" Line 1. Module ControlUnit doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.DMemory
+Compiling module xil_defaultlib.Memory
+Compiling module xil_defaultlib.Register
+Compiling module xil_defaultlib.PCRegister
+Compiling module xil_defaultlib.MOutRegister
+Compiling module xil_defaultlib.MDRegister
+Compiling module xil_defaultlib.SRegister
+Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.Mux
+Compiling module xil_defaultlib.Decoder
+Compiling module xil_defaultlib.ControlUnit
+Compiling module xil_defaultlib.processor
+Compiling module xil_defaultlib.TopModule
+Compiling module xil_defaultlib.pro_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot pro_tb_behav
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 914.570 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '9' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "pro_tb_behav -key {Behavioral:sim_1:Functional:pro_tb} -tclbatch {pro_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+source pro_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'pro_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:05 ; elapsed = 00:00:19 . Memory (MB): peak = 914.570 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon Jul  4 14:56:47 2022...

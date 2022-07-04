@@ -3,44 +3,6 @@ Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
 Running: C:/Xilinx/Vivado/2018.2/bin/unwrapped/win64.o/xelab.exe -wto 9128b449f66d41ad943581e246ffc12b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot pro_tb_behav xil_defaultlib.pro_tb xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
-WARNING: [VRFC 10-278] actual bit length 3 differs from formal bit length 4 for port Din [D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/processor.v:35]
 WARNING: [VRFC 10-278] actual bit length 8 differs from formal bit length 9 for port load_decode_sig [D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/processor.v:50]
 Completed static elaboration
-Starting simulation data flow analysis
-WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/testmp.v" Line 1. Module TopModule doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/DMemory.v" Line 1. Module DMemory doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/Memory.v" Line 1. Module Memory doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/processor.v" Line 1. Module processor doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/Register.v" Line 1. Module Register doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/Register.v" Line 1. Module Register doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/Register.v" Line 1. Module Register doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/Register.v" Line 1. Module Register doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/Register.v" Line 1. Module Register doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/Register.v" Line 1. Module Register doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/Register.v" Line 1. Module Register doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/PCRegister.v" Line 1. Module PCRegister doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/MOutRegister.v" Line 1. Module MOutRegister doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/MDRegister.v" Line 1. Module MDRegister doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/SRegister.v" Line 1. Module SRegister doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/ALU.v" Line 1. Module ALU doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/Mux.v" Line 1. Module Mux doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/Decoder.v" Line 1. Module Decoder doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.srcs/sources_1/imports/new/ControlUnit.v" Line 1. Module ControlUnit doesn't have a timescale but at least one module in design has a timescale.
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.DMemory
-Compiling module xil_defaultlib.Memory
-Compiling module xil_defaultlib.Register
-Compiling module xil_defaultlib.PCRegister
-Compiling module xil_defaultlib.MOutRegister
-Compiling module xil_defaultlib.MDRegister
-Compiling module xil_defaultlib.SRegister
-Compiling module xil_defaultlib.ALU
-Compiling module xil_defaultlib.Mux
-Compiling module xil_defaultlib.Decoder
-Compiling module xil_defaultlib.ControlUnit
-Compiling module xil_defaultlib.processor
-Compiling module xil_defaultlib.TopModule
-Compiling module xil_defaultlib.pro_tb
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot pro_tb_behav
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel

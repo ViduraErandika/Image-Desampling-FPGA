@@ -17,7 +17,13 @@ module pro_tb();
  );
  
  initial begin
- start <= 1; 
+ start <= 0; 
+ #50;
+ start <= 1;
+ #50;
+ start <= 0; 
+ #2_500_000;
+ $finish;
  end
  
 endmodule

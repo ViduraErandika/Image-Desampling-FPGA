@@ -32,7 +32,7 @@ module processor(
 	Register E(.clk(negclk), .LDsignal(le), .Din(C), .Dout(Me));
 	
 	Register MAR(.clk(negclk), .LDsignal(lmar), .Din(C), .Dout(mar));
-	PCRegister PC(.clk(clk),.Din(PC_select), .Dout(pc));
+	PCRegister PC(.clk(negclk),.Din(PC_select), .Dout(pc));
 	MOutRegister mbru(.Din(iramIn),.Dout(irCU));
     MDRegister mdr(.clk(negclk),.DramIn(dramIn),.Din(C), .Dout(Mmdr), .DramOut(mdr_out));
 	
@@ -48,14 +48,14 @@ module processor(
 	
 	ControlUnit CU(.ir(irCU), .z(z), .clk(clk), .start_sig(start), .mux_sig(M_select), .alu_sig(operation),
 							.iram_fetch(fetch), .dram_read(read), .dram_write(write), .load_decode_sig(D_select), .incac(incac),
-							.pc_sig(PC_select));
+							.PC_SIG(PC_select));
 							
 						
 	assign marOut = mar;   //address to the Dram.
 	assign pcout = pc;     // address to the Iram.
 	assign mdrOut = mdr_out;   //data input to the Dram
-	assign iram = iramIn;  //data from iram
-	assign dram = dramIn;  //data from dram
+	assign iramIn = iram;  //data from iram
+	assign dramIn = dram;  //data from dram
 	
 endmodule
 	

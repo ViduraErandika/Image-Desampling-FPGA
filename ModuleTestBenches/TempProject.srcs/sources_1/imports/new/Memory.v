@@ -6,6 +6,7 @@ module Memory(
 	); 
 	
 	reg [7:0] memory [0:255];
+	reg [17:0] ADDRESS;
 	reg [17:0] d;
 	
 	assign Dout = d;
@@ -19,8 +20,15 @@ module Memory(
 //    end
     end
 	
-	always @(fetch) begin
-		if (fetch) d = {10'd0,memory[address]};
+	always @(address)begin
+	$monitor("The value of address has changed to %d",address);
+	ADDRESS <= address;
+	end
+	
+	always @(fetch, ADDRESS) begin
+	$monitor("The value of d has changed to %d",d);
+	$monitor("The value of fetch has changed to %d",fetch);
+		if (fetch) d <= {10'd0,memory[ADDRESS[7:0]]};
 	end
 	
 

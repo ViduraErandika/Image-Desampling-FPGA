@@ -25,22 +25,25 @@ module ALU(
 	assign C=data;
 	
 		
-	always @(B) begin
+	always @(B,operation) begin
 		case(operation)
-			ADD: data = A+B;
+			ADD: begin data = A+B; Z = 1; end
 			SUB: begin
-			     data = (A>B)? (A - B): (B - A);
+			     if(A>B) begin
+			     data =  (A - B); end
+			      else begin data =  (B - A);
+			      end
 			     Z = (data == 0)? 1'b1:1'b0;
 			     end
-			PASSBTOC: data = B;
-			DECAC: data = A-1; 
-			LSHIFT1: data = A<<1;
-			LSHIFT2: data = A<<2;
-			LSHIFT8: data = A<<8;
-			RSHIFT1: data = A>>1;
-			RSHIFT4: data = A>>4;
-			RESET:   data = 18'd0;
-			none: data=data;
+			PASSBTOC: begin data = B; Z = 1; end
+			DECAC: begin data = A-1; Z = 1; end
+			LSHIFT1:begin data = A<<1; Z = 1; end
+			LSHIFT2: begin data = A<<2; Z = 1; end
+			LSHIFT8:begin data = A<<8; Z = 1; end
+			RSHIFT1: begin data = A>>1; Z = 1; end
+			RSHIFT4:begin data = A>>4; Z = 1; end
+			RESET: begin  data = 18'd0; Z = 1; end
+			none:begin data=data; Z = 1; end
 		endcase
 	end
 endmodule	

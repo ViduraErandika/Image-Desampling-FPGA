@@ -1,6 +1,6 @@
 module PCRegister(
 	input wire clk,
-    input wire [3:0] Din,
+    input wire [2:0] Din,
     output wire [17:0] Dout
 );
 reg [17:0] d;
@@ -15,6 +15,7 @@ assign Dout = d;
 
 
 always @(posedge clk) begin
+$monitor("The value of DinPC has changed to %b",Din);
     case(Din)
     pc_reset: d<= 18'd0;
     pc_inc: d<= d+ 18'd1;

@@ -1,3 +1,4 @@
+`timescale 1ns / 100ps
 module TopModule(
 	input wire clk,
 	input wire start
