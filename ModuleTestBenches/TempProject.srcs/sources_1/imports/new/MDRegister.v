@@ -2,6 +2,7 @@ module MDRegister(
 input wire clk,
     input wire [17:0] DramIn,
     input wire [17:0] Din,
+    input wire LDsignal,
     output wire [17:0] Dout,
     output wire [17:0] DramOut
 );
@@ -17,6 +18,6 @@ always @(DramIn) begin
 end
 
 always @(posedge clk) begin
-    d<=Din;
+    if (LDsignal) d<=Din;
 end
 endmodule 

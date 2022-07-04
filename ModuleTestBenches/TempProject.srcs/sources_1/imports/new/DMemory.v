@@ -29,6 +29,7 @@ module DMemory(
 		if (read) d = {10'd0,memory[ADDRESS]};
 		else if (write)begin
 		memory[ADDRESS] = Din[7:0];
+		$display("%d",Din[7:0]);
 		$fwrite(file_id,"%d",Din[7:0]);
 		$fwrite(file_id,"\n");
 		end

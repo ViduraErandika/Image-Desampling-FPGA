@@ -15,12 +15,11 @@ assign Dout = d;
 
 
 always @(posedge clk) begin
-$monitor("The value of DinPC has changed to %b",Din);
     case(Din)
     pc_reset: d<= 18'd0;
     pc_inc: d<= d+ 18'd1;
-    pc_loop: d<= 18'd37;
-    pc_if: d<= 18'd132 ;
+    pc_loop: d<= 18'd35;
+    pc_if: d<= 18'd126 ;
     pc_default: d <= d;
 
 endcase

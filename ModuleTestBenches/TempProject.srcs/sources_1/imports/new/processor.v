@@ -21,7 +21,6 @@ module processor(
 	wire z;
 	wire [3:0] operation;
 	wire [17:0] aluOut;
-	wire [17:0] mar,pc,mdr_out, iramIn, dramIn;
 	wire [17:0] irCU;
 	
 	Register R1(.clk(negclk), .LDsignal(lr1), .Din(C), .Dout(Mr1));
@@ -31,10 +30,10 @@ module processor(
 	Register L(.clk(negclk), .LDsignal(ll), .Din(C), .Dout(Ml));
 	Register E(.clk(negclk), .LDsignal(le), .Din(C), .Dout(Me));
 	
-	Register MAR(.clk(negclk), .LDsignal(lmar), .Din(C), .Dout(mar));
-	PCRegister PC(.clk(negclk),.Din(PC_select), .Dout(pc));
-	MOutRegister mbru(.Din(iramIn),.Dout(irCU));
-    MDRegister mdr(.clk(negclk),.DramIn(dramIn),.Din(C), .Dout(Mmdr), .DramOut(mdr_out));
+	Register MAR(.clk(negclk), .LDsignal(lmar), .Din(C), .Dout(marOut));
+	PCRegister PC(.clk(negclk),.Din(PC_select), .Dout(pcout));
+	MOutRegister mbru(.Din(iram),.Dout(irCU));
+    MDRegister mdr(.clk(negclk),.DramIn(dram),.Din(C), .Dout(Mmdr), .DramOut(mdrOut), .LDsignal(lmdr));
 	
 	SRegister AC(.clk(negclk), .Din(aluOut), .Dout(C), .inc(incac));
 	
@@ -51,11 +50,9 @@ module processor(
 							.PC_SIG(PC_select));
 							
 						
-	assign marOut = mar;   //address to the Dram.
-	assign pcout = pc;     // address to the Iram.
-	assign mdrOut = mdr_out;   //data input to the Dram
-	assign iramIn = iram;  //data from iram
-	assign dramIn = dram;  //data from dram
+
+	
+	
 	
 endmodule
 	

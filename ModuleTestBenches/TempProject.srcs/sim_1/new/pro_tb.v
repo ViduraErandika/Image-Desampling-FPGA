@@ -22,7 +22,7 @@ module pro_tb();
  start <= 1;
  #50;
  start <= 0; 
- #2_500_000;
+ #30_500_000;
  $finish;
  end
  

@@ -17,7 +17,10 @@ module ALU(
 				  LSHIFT8  = 4'b0111,
 				  RSHIFT1  = 4'b1000,
 				  RSHIFT4  = 4'b1001,
-				  RESET    = 4'b1011;
+				  RESET    = 4'b1011,
+                  ADD256_ALU = 4'b1100,
+                  SUB256_ALU = 4'b1101,	
+                  MUL        = 4'b1110;			  
 
 	reg [17:0] data;
 	reg Z;
@@ -43,6 +46,9 @@ module ALU(
 			RSHIFT1: begin data = A>>1; Z = 1; end
 			RSHIFT4:begin data = A>>4; Z = 1; end
 			RESET: begin  data = 18'd0; Z = 1; end
+			ADD256_ALU:begin  data = A + 18'd256; Z = 1; end
+			SUB256_ALU:begin  data = A - 18'd256; Z = 1; end
+			MUL:begin  data = A * B; Z = 1; end
 			none:begin data=data; Z = 1; end
 		endcase
 	end

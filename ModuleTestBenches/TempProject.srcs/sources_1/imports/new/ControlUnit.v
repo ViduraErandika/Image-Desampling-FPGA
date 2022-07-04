@@ -37,7 +37,10 @@ module ControlUnit(
                   LSHIFT8  = 4'b0111,
                   RSHIFT1  = 4'b1000,
                   RSHIFT4  = 4'b1001,
-                  RESET    = 4'b1011;
+                  RESET    = 4'b1011,
+                  ADD256_ALU = 4'b1100,
+                  SUB256_ALU = 4'b1101,
+                  MUL        = 4'b1110;	
                   
     // MUX parameters
 	localparam   R1_M   = 4'b1000,
@@ -68,20 +71,20 @@ module ControlUnit(
                 pc_default = 3'b100;
                  
   // AC increment
-  localparam   inc_on= 1'b0,
-               inc_off= 1'b1;
+  localparam   inc_on= 1'b1,
+               inc_off= 1'b0;
                
   // IRAM Read
-  localparam   iram_fetch_on= 1'b0,
-               iram_fetch_off=1'b1;
+  localparam   iram_fetch_on= 1'b1,
+               iram_fetch_off=1'b0;
                
                
    //DRAM Read
-   localparam   DRAM_read_on= 1'b0,
-                DRAM_read_off=1'b1;
+   localparam   DRAM_read_on= 1'b1,
+                DRAM_read_off=1'b0;
    //DRAM Write
-   localparam   DRAM_write_on= 1'b0,
-                DRAM_write_off=1'b1;
+   localparam   DRAM_write_on= 1'b1,
+                DRAM_write_off=1'b0;
    
  
    
@@ -137,7 +140,6 @@ always @(posedge clk)
                         begin
                             mux_sig    <= none_M;
                             pc_sig  <= pc_inc;
-                            $display("CLAC called");
                             alu_sig    <= RESET;
                             load_decode_sig<= none_D;
                             incac      <= inc_off;
@@ -201,9 +203,9 @@ always @(posedge clk)
                         
                         ADD256:
                         begin
-                            mux_sig    <= L_M;
+                            mux_sig    <= none_M;
                             pc_sig  <= pc_inc;
-                            alu_sig    <= ADD;
+                            alu_sig    <= ADD256_ALU;
                             load_decode_sig<= none_D;
                             incac      <= inc_off;
                             iram_fetch  <= iram_fetch_off;
@@ -214,9 +216,9 @@ always @(posedge clk)
                         
                         SUB256:
                         begin
-                            mux_sig    <= L_M;
+                            mux_sig    <= none_M;
                             pc_sig  <= pc_inc;
-                            alu_sig    <= SUB;
+                            alu_sig    <= SUB256_ALU;
                             load_decode_sig<= none_D;
                             incac      <= inc_off;
                             iram_fetch  <= iram_fetch_off;
@@ -305,9 +307,9 @@ always @(posedge clk)
                         
                         MULL:
                         begin
-                            mux_sig    <= none_M;
+                            mux_sig    <= L_M;
                             pc_sig  <= pc_inc;
-                            alu_sig    <= LSHIFT8;
+                            alu_sig    <= MUL;
                             load_decode_sig<= none_D;
                             incac      <= inc_off;
                             iram_fetch  <= iram_fetch_off;
@@ -448,7 +450,6 @@ always @(posedge clk)
                         
                         MVEAC:
                         begin
-                        $display("MVEAC called");
                             mux_sig    <= E_M;
                             pc_sig  <= pc_inc;
                             alu_sig    <= PASSBTOC;
@@ -629,7 +630,6 @@ always @(posedge clk)
                                  begin
                                      pc_sig <= pc_reset;
                                      state <= FETCH1;
-                                     $display("here %d,%d",start_sig,pc_sig);
                                  end
                                  else 
                                  begin
