@@ -36,7 +36,7 @@ module processor(
 	MOutRegister mbru(.Din(iramIn),.Dout(irCU));
     MDRegister mdr(.clk(negclk),.DramIn(dramIn),.Din(C), .Dout(Mmdr), .DramOut(mdr_out));
 	
-	SRegister AC(.clk(clk), .Din(aluOut), .Dout(C), .inc(incac));
+	SRegister AC(.clk(negclk), .Din(aluOut), .Dout(C), .inc(incac));
 	
 	ALU ALU(.A(C), .B(B), .C(aluOut), .z(z), .operation(operation), .clk(clk));
 	

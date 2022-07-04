@@ -48,14 +48,15 @@ module alu_tb();
     integer i;
     
     initial begin
-    A <= 17'd64;
-    B <= 17'd32;
+    A <= 18'd64;
+    B <= 18'd32;
     operation <= 4'b0000;
     
    
     
     for( i=0; i<10 ; i=i+1)begin
     operation = operation + 4'b0001;
+    B = B + 18'd1;
     #10; //delay
     end
     end

@@ -43,24 +43,28 @@ module mem_tb();
 
  initial begin
  
- fetch <= 1;
- address <= 18'd0; 
+ fetch = 1;
+ address = 18'd0; 
+ #10;
+ fetch = 0;
  #10;
  
-  fetch <= 1;
- address <= 18'd5; 
+  fetch = 1;
+ address = 18'd5; #10;
+ fetch = 0;
  #10;
  
-  fetch <= 1;
- address <= 18'd10; 
+  fetch = 1;
+ address = 18'd10;  #10;
+ fetch = 0;
  #10;
  
-  fetch <= 1;
- address <= 18'd20; 
+  fetch = 1;
+ address = 18'd20;
  #10;
  
-  fetch <= 1;
- address <= 18'd134; 
+  fetch = 0;
+ address = 18'd134; 
  #10;
  
  

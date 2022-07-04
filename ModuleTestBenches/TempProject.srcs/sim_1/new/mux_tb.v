@@ -37,8 +37,6 @@ module mux_tb();
  reg [17:0] r4;
  reg [17:0] l;
  reg [17:0] e;
- reg [17:0] mbru;
- reg [17:0] pc;
  reg [17:0] mdr;
  //outputs
  wire [17:0] out;
@@ -51,53 +49,29 @@ module mux_tb();
     .r4(r4),
     .l(l),
     .e(e),
-    .mbru(mbru),
-    .pc(pc),
     .mdr(mdr),
     .out(out)
     );
     
  integer i;
  initial begin
+ r1 <= 18'd1;
+ r2 <= 18'd2;
+ r3 <= 18'd3;
+ r4 <= 18'd4;
+ l <= 18'd5;
+ mdr <= 18'd9;
+ e <= 18'd6;
+
  select = 4'b0000;
  #10;
+ for(i=0;i<5;i=i+1)begin
+ select = select + 4'd1;
+  #10;
+ end
  
- select = 4'b0110;
- r1 = 18'd1;
- #10; 
- 
-  select = 4'b0111;
- r2 = 18'd2;
- #10; 
- 
-  select = 4'b1000;
- r3 = 18'd3;
- #10;
- 
-  select = 4'b1001;
- r4 = 18'd4;
- #10; 
- 
-  select = 4'b0101;
- l = 18'd5;
- #10; 
- 
-  select = 4'b0100;
- e = 18'd6;
- #10; 
- 
-  select = 4'b0011;
- mbru = 18'd7;
- #10; 
- 
-  select = 4'b0010;
- pc = 18'd8;
- #10;  
- 
-   select = 4'b0001;
-mdr = 18'd9;
-#10; 
-
+ select = 4'b1000; #10;
+ select = 4'b1001; #10;
  
  end   
  

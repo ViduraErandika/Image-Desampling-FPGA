@@ -26,16 +26,18 @@ module reg_tb();
  localparam  clock_period = 10;
     reg clk;
     initial begin
-        clk = 0;
+        clk = 1;
         forever #(clock_period/2) clk <= ~clk;
     end
  reg LDsignal;
  reg [17:0] Din;
  //outputs
  wire [17:0] Dout;
+ wire negclk;
+ assign negclk = ~clk;
  
  Register test(
-    .clk(clk),
+    .clk(negclk),
     .LDsignal(LDsignal),
     .Din(Din),
     .Dout(Dout)

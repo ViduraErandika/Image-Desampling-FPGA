@@ -25,43 +25,35 @@ module sreg_tb();
  localparam  clock_period = 10;
     reg clk;
     initial begin
-        clk = 0;
+        clk = 1;
         forever #(clock_period/2) clk <= ~clk;
     end
+  wire negclk;
+  assign negclk = ~clk;
     
- reg LDsignal;
  reg inc;
- reg reset;
  reg [17:0] Din;
  //outputs
  wire [17:0] Dout;
  
  SRegister test(
-    .clk(clk),
-    .LDsignal(LDsignal),
+    .clk(negclk),
     .Din(Din),
     .inc(inc),
-    .reset(reset),
     .Dout(Dout)
     );
     
  initial begin
  
- LDsignal<= 1;
- reset <=0;
  inc <= 0;
  Din <= 17'd64;
  #10;
  
-  LDsignal<= 0;
-  reset <=0;
   inc <= 1;
  #10;
- 
-  LDsignal<= 0;
- reset <=1;
+
  inc <= 0;
-//Din <= 17'd16;
+Din <= 17'd16;
 #10;
  
  end
