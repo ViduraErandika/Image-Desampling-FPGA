@@ -105,7 +105,7 @@ always @(posedge clk)
                      case (state) 
                      FETCH1:
                      begin
-                         mux_sig    = none_M;
+                         mux_sig    <= none_M;
                          alu_sig    <= none_ALU;
                          load_decode_sig<= none_D;
                          incac      <= inc_off;
@@ -123,7 +123,7 @@ always @(posedge clk)
                         
                         NOP:
                         begin
-                            mux_sig    = none_M;
+                            mux_sig    <= none_M;
                             pc_sig  <= pc_inc;
                             alu_sig    <= none_ALU;
                             load_decode_sig<= none_D;
@@ -136,7 +136,7 @@ always @(posedge clk)
                         
                         CLAC:                            
                         begin
-                            mux_sig    = none_M;
+                            mux_sig    <= none_M;
                             pc_sig  <= pc_inc;
                             alu_sig    <= RESET;
                             load_decode_sig<= none_D;
@@ -149,7 +149,7 @@ always @(posedge clk)
                         
                         LDAC:
                         begin
-                            mux_sig  = none_M;
+                            mux_sig  <= none_M;
                             pc_sig  <= pc_inc;
                             alu_sig    <= none_ALU;
                             load_decode_sig<= none_D;
@@ -162,7 +162,7 @@ always @(posedge clk)
                         
                         STAC:
                         begin
-                            mux_sig    = none_M;
+                            mux_sig    <= none_M;
                             pc_sig  <= pc_inc;
                             alu_sig    <= none_ALU;
                             load_decode_sig<= MDR_D;
@@ -175,7 +175,7 @@ always @(posedge clk)
                         
                         INAC:
                         begin
-                            mux_sig    = none_M;
+                            mux_sig    <= none_M;
                             pc_sig  <= pc_inc;
                             alu_sig    <= none_ALU;
                             load_decode_sig<= none_D;
@@ -188,7 +188,7 @@ always @(posedge clk)
                         
                         DCAC:
                         begin
-                            mux_sig    = none_M;
+                            mux_sig    <= none_M;
                             pc_sig  <= pc_inc;
                             alu_sig    <= DECAC;
                             load_decode_sig<= none_D;
@@ -201,7 +201,7 @@ always @(posedge clk)
                         
                         ADD256:
                         begin
-                            mux_sig    = L_M;
+                            mux_sig    <= L_M;
                             pc_sig  <= pc_inc;
                             alu_sig    <= ADD;
                             load_decode_sig<= none_D;
@@ -214,7 +214,7 @@ always @(posedge clk)
                         
                         SUB256:
                         begin
-                            mux_sig    = L_M;
+                            mux_sig    <= L_M;
                             pc_sig  <= pc_inc;
                             alu_sig    <= SUB;
                             load_decode_sig<= none_D;
@@ -227,7 +227,7 @@ always @(posedge clk)
                         
                         SUBL:
                         begin
-                            mux_sig    = L_M;
+                            mux_sig    <= L_M;
                             pc_sig  <= pc_inc;
                             alu_sig    <= SUB;
                             load_decode_sig<= none_D;
@@ -240,7 +240,7 @@ always @(posedge clk)
                         
                         SUBBE:
                         begin
-                            mux_sig    = E_M;
+                            mux_sig    <= E_M;
                             pc_sig  <= pc_inc;
                             alu_sig    <= SUB;
                             load_decode_sig<= none_D;
@@ -253,7 +253,7 @@ always @(posedge clk)
                         
                         DIV2:
                         begin
-                            mux_sig    = none_M;
+                            mux_sig    <= none_M;
                             pc_sig  <= pc_inc;
                             alu_sig    <= RSHIFT1;
                             load_decode_sig<= none_D;
@@ -266,7 +266,7 @@ always @(posedge clk)
                         
                         DIV16:
                         begin
-                            mux_sig    = none_M;
+                            mux_sig    <= none_M;
                             pc_sig  <= pc_inc;
                             alu_sig    <= RSHIFT4;
                             load_decode_sig<= none_D;
@@ -279,7 +279,7 @@ always @(posedge clk)
                         
                         MUL2:
                         begin
-                            mux_sig    = none_M;
+                            mux_sig    <= none_M;
                             pc_sig  <= pc_inc;
                             alu_sig    <= LSHIFT1;
                             load_decode_sig<= none_D;
@@ -292,7 +292,7 @@ always @(posedge clk)
                         
                         MUL4:
                         begin
-                            mux_sig    = none_M;
+                            mux_sig    <= none_M;
                             pc_sig  <= pc_inc;
                             alu_sig    <= LSHIFT2;
                             load_decode_sig<= none_D;
@@ -305,7 +305,7 @@ always @(posedge clk)
                         
                         MULL:
                         begin
-                            mux_sig    = none_M;
+                            mux_sig    <= none_M;
                             pc_sig  <= pc_inc;
                             alu_sig    <= LSHIFT8;
                             load_decode_sig<= none_D;
@@ -318,7 +318,7 @@ always @(posedge clk)
                         
                         ADDR1:
                         begin
-                            mux_sig    = R1_M;
+                            mux_sig    <= R1_M;
                             pc_sig  <= pc_inc;
                             alu_sig    <= ADD;
                             load_decode_sig<= none_D;
@@ -331,7 +331,7 @@ always @(posedge clk)
                         
                         ADDR3:
                         begin
-                            mux_sig    = R3_M;
+                            mux_sig    <= R3_M;
                             pc_sig  <= pc_inc;
                             alu_sig    <= ADD;
                             load_decode_sig<= none_D;
@@ -344,7 +344,7 @@ always @(posedge clk)
                         
                         ADDL:
                         begin
-                            mux_sig    = L_M;
+                            mux_sig   <= L_M;
                             pc_sig  <= pc_inc;
                             alu_sig    <= ADD;
                             load_decode_sig<= none_D;
@@ -357,7 +357,7 @@ always @(posedge clk)
                         
                         MVACL:
                         begin
-                            mux_sig    = none_M;
+                            mux_sig    <= none_M;
                             pc_sig  <= pc_inc;
                             alu_sig    <= none_ALU;
                             load_decode_sig<= L_D;
@@ -370,7 +370,7 @@ always @(posedge clk)
                         
                         MVACE:
                         begin
-                            mux_sig    = none_M;
+                            mux_sig    <= none_M;
                             pc_sig  <= pc_inc;
                             alu_sig    <= none_ALU;
                             load_decode_sig<= E_D;
@@ -383,7 +383,7 @@ always @(posedge clk)
                         
                         MVACR1:
                         begin
-                            mux_sig    = none_M;
+                            mux_sig   <= none_M;
                             pc_sig  <= pc_inc;
                             alu_sig    <= none_ALU;
                             load_decode_sig<= R1_D;
@@ -396,7 +396,7 @@ always @(posedge clk)
                         
                         MVACR2:
                         begin
-                            mux_sig    = none_M;
+                            mux_sig    <= none_M;
                             pc_sig  <= pc_inc;
                             alu_sig    <= none_ALU;
                             load_decode_sig<= R2_D;
@@ -409,7 +409,7 @@ always @(posedge clk)
                         
                         MVACR3:
                         begin
-                            mux_sig    = none_M;
+                            mux_sig    <= none_M;
                             pc_sig  <= pc_inc;
                             alu_sig    <= none_ALU;
                             load_decode_sig<= R3_D;
@@ -422,7 +422,7 @@ always @(posedge clk)
                         
                         MVACR4:
                         begin
-                            mux_sig    = none_M;
+                            mux_sig    <= none_M;
                             pc_sig  <= pc_inc;
                             alu_sig    <= none_ALU;
                             load_decode_sig<= R4_D;
@@ -435,7 +435,7 @@ always @(posedge clk)
                         
                         MVACAR:
                         begin
-                            mux_sig    = none_M;
+                            mux_sig    <= none_M;
                             pc_sig  <= pc_inc;
                             alu_sig    <= none_ALU;
                             load_decode_sig<= MAR_D;
@@ -448,7 +448,7 @@ always @(posedge clk)
                         
                         MVEAC:
                         begin
-                            mux_sig    = E_M;
+                            mux_sig    <= E_M;
                             pc_sig  <= pc_inc;
                             alu_sig    <= PASSBTOC;
                             load_decode_sig<= none_D;
@@ -461,7 +461,7 @@ always @(posedge clk)
                         
                         MVR1AC:
                         begin
-                            mux_sig    = R1_M;
+                            mux_sig    <= R1_M;
                             pc_sig  <= pc_inc;
                             alu_sig    <= PASSBTOC;
                             load_decode_sig<= none_D;
@@ -474,7 +474,7 @@ always @(posedge clk)
                         
                         MVR2AC:
                         begin
-                            mux_sig    = R2_M;
+                            mux_sig    <= R2_M;
                             pc_sig  <= pc_inc;
                             alu_sig    <= PASSBTOC;
                             load_decode_sig<= none_D;
@@ -487,7 +487,7 @@ always @(posedge clk)
                         
                         MVR3AC:
                         begin
-                            mux_sig    = R3_M;
+                            mux_sig    <= R3_M;
                             pc_sig  <= pc_inc;
                             alu_sig    <= PASSBTOC;
                             load_decode_sig<= none_D;
@@ -500,7 +500,7 @@ always @(posedge clk)
                         
                         MVR4AC:
                         begin
-                            mux_sig    = R4_M;
+                            mux_sig    <= R4_M;
                             pc_sig  <= pc_inc;
                             alu_sig    <= PASSBTOC;
                             load_decode_sig<= none_D;
@@ -516,7 +516,7 @@ always @(posedge clk)
                         case(Z)
                         1:
                         begin
-                            mux_sig    = none_M;
+                            mux_sig    <= none_M;
                             pc_sig  <= pc_inc;
                             alu_sig    <= none_ALU;
                             load_decode_sig<= none_D;
@@ -528,7 +528,7 @@ always @(posedge clk)
                         end 
                         0:
                         begin
-                            mux_sig    = none_M;
+                            mux_sig    <= none_M;
                             pc_sig     <= pc_loop;
                             alu_sig    <= none_ALU;
                             load_decode_sig<= none_D;
@@ -546,7 +546,7 @@ always @(posedge clk)
                         case(Z)
                         1:
                         begin
-                            mux_sig    = none_M;
+                            mux_sig    <= none_M;
                             pc_sig     <= pc_inc;
                             alu_sig    <= none_ALU;
                             load_decode_sig<= none_D;
@@ -558,7 +558,7 @@ always @(posedge clk)
                         end
                         0:
                         begin
-                            mux_sig    = none_M;
+                            mux_sig    <= none_M;
                             pc_sig     <= pc_if;
                             alu_sig    <= none_ALU;
                             load_decode_sig<= none_D;
@@ -574,7 +574,7 @@ always @(posedge clk)
                         
                         END:
                         begin
-                            mux_sig    = none_M;
+                            mux_sig    <= none_M;
                             pc_sig     <= pc_default;
                             alu_sig    <= none_ALU;
                             load_decode_sig<= none_D;

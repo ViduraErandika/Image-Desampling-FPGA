@@ -9,8 +9,8 @@ module DMemory(
 	
 	reg [7:0] memory [0:82950]; //128*128 + 66566
 	reg [17:0] d;
-	
 	assign Dout = d;
+	
 	integer file_id;
 	
 	

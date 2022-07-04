@@ -1,0 +1,138 @@
+/*
+
+Xilinx Vivado v2018.2 (64-bit) [Major: 2018, Minor: 2]
+SW Build: 2258646 on Thu Jun 14 20:03:12 MDT 2018
+IP Build: 2256618 on Thu Jun 14 22:10:49 MDT 2018
+
+Process ID: 736
+License: Customer
+
+Current time: 	Mon Jul 04 11:24:36 IST 2022
+Time zone: 	India Standard Time (Asia/Colombo)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 8
+
+Screen size: 2560x1440
+Screen resolution (DPI): 96
+Available screens: 1
+Available disk space: 34 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_112 64-bit
+Java home: 	C:/Xilinx/Vivado/2018.2/tps/win64/jre
+Java executable location: 	C:/Xilinx/Vivado/2018.2/tps/win64/jre/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 2 GB
+
+
+User name: 	vidur
+User home directory: C:/Users/vidur
+User working directory: D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2018.2
+RDI_DATADIR: C:/Xilinx/Vivado/2018.2/data
+RDI_BINDIR: C:/Xilinx/Vivado/2018.2/bin
+
+Vivado preferences file location: C:/Users/vidur/AppData/Roaming/Xilinx/Vivado/2018.2/vivado.xml
+Vivado preferences directory: C:/Users/vidur/AppData/Roaming/Xilinx/Vivado/2018.2/
+Vivado layouts directory: C:/Users/vidur/AppData/Roaming/Xilinx/Vivado/2018.2/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2018.2/lib/classes/planAhead.jar
+Vivado log file location: 	D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/vivado.log
+Vivado journal file location: 	D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/vivado.jou
+Engine tmp dir: 	D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/.Xil/Vivado-736-Vidu-VivoBook
+
+Xilinx Environment Variables
+----------------------------
+ALTERAOCLSDKROOT: C:\altera\14.1\hld
+XILINX: C:/Xilinx/Vivado/2018.2/ids_lite/ISE
+XILINX_DSP: C:/Xilinx/Vivado/2018.2/ids_lite/ISE
+XILINX_PLANAHEAD: C:/Xilinx/Vivado/2018.2
+XILINX_SDK: C:/Xilinx/SDK/2018.2
+XILINX_VIVADO: C:/Xilinx/Vivado/2018.2
+XILINX_VIVADO_HLS: C:/Xilinx/Vivado/2018.2
+
+
+GUI allocated memory:	199 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 515 MB
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// bx (ck):  Open Project : addNotify
+// Opening Vivado Project: D:\FPGA_Development\Image-Desampling-FPGA\ModuleTestBenches\TempProject.xpr. Version: Vivado v2018.2 
+// [GUI Memory]: 78 MB (+79476kb) [00:00:08]
+// [Engine Memory]: 493 MB (+365292kb) [00:00:08]
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches/TempProject.xpr 
+// Tcl Message: INFO: [Project 1-313] Project file moved from 'D:/FPGA_Development/TempProject' since last save. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.2/data/ip'. 
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 543 MB (+26531kb) [00:00:12]
+// HMemoryUtils.trashcanNow. Engine heap size: 570 MB. GUI used memory: 47 MB. Current time: 7/4/22 11:24:40 AM IST
+// Project name: TempProject; location: D:/FPGA_Development/Image-Desampling-FPGA/ModuleTestBenches; part: xc7k70tfbv676-1
+// [Engine Memory]: 603 MB (+34323kb) [00:00:14]
+// Tcl Message: open_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:05 . Memory (MB): peak = 781.191 ; gain = 53.055 
+dismissDialog("Open Project"); // bx (ck)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Tcl Message: update_compile_order -fileset sources_1 
+// PAPropertyPanels.initPanels (ALU.v) elapsed time: 0.2s
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, ALU (ALU.v)]", 1, false); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, ALU (ALU.v)]", 1, false, false, false, false, false, true); // B (D, ck) - Double Click
+// Elapsed time: 57 seconds
+selectCodeEditor("ALU.v", 145, 452); // ce (w, ck)
+selectCodeEditor("ALU.v", 141, 369); // ce (w, ck)
+typeControlKey((HResource) null, "ALU.v", 'v'); // ce (w, ck)
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // B (f, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, DMemory (DMemory.v)]", 2, false, false, false, false, false, true); // B (D, ck) - Double Click
+// Elapsed time: 31 seconds
+selectCodeEditor("DMemory.v", 43, 254); // ce (w, ck)
+selectCodeEditor("DMemory.v", 213, 248); // ce (w, ck)
+// [GUI Memory]: 85 MB (+2919kb) [00:02:13]
+selectCodeEditor("DMemory.v", 228, 306); // ce (w, ck)
+typeControlKey((HResource) null, "DMemory.v", 'c'); // ce (w, ck)
+selectCodeEditor("DMemory.v", 37, 408); // ce (w, ck)
+selectCodeEditor("DMemory.v", 37, 408, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("DMemory.v", 37, 408); // ce (w, ck)
+typeControlKey((HResource) null, "DMemory.v", 'c'); // ce (w, ck)
+// [GUI Memory]: 90 MB (+431kb) [00:02:33]
+// Elapsed time: 16 seconds
+selectCodeEditor("DMemory.v", 24, 432); // ce (w, ck)
+selectCodeEditor("DMemory.v", 24, 432, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("DMemory.v", 24, 432); // ce (w, ck)
+typeControlKey((HResource) null, "DMemory.v", 'c'); // ce (w, ck)
+// Elapsed time: 12 seconds
+selectCodeEditor("DMemory.v", 395, 465); // ce (w, ck)
+// Elapsed time: 33 seconds
+selectCodeEditor("DMemory.v", 415, 601); // ce (w, ck)
+typeControlKey((HResource) null, "DMemory.v", 'c'); // ce (w, ck)
+// [GUI Memory]: 95 MB (+1149kb) [00:04:18]
+// Elapsed time: 136 seconds
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // B (f, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED

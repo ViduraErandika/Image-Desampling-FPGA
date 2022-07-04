@@ -1,0 +1,369 @@
+/*
+
+Xilinx Vivado v2018.2 (64-bit) [Major: 2018, Minor: 2]
+SW Build: 2258646 on Thu Jun 14 20:03:12 MDT 2018
+IP Build: 2256618 on Thu Jun 14 22:10:49 MDT 2018
+
+Process ID: 12916
+License: Customer
+
+Current time: 	Mon Jul 04 11:10:25 IST 2022
+Time zone: 	India Standard Time (Asia/Colombo)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 8
+
+Screen size: 2560x1440
+Screen resolution (DPI): 96
+Available screens: 1
+Available disk space: 34 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_112 64-bit
+Java home: 	C:/Xilinx/Vivado/2018.2/tps/win64/jre
+Java executable location: 	C:/Xilinx/Vivado/2018.2/tps/win64/jre/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 2 GB
+
+
+User name: 	vidur
+User home directory: C:/Users/vidur
+User working directory: D:/FPGA_Development/Image-Desampling-FPGA/ImageDesampleVerilog
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2018.2
+RDI_DATADIR: C:/Xilinx/Vivado/2018.2/data
+RDI_BINDIR: C:/Xilinx/Vivado/2018.2/bin
+
+Vivado preferences file location: C:/Users/vidur/AppData/Roaming/Xilinx/Vivado/2018.2/vivado.xml
+Vivado preferences directory: C:/Users/vidur/AppData/Roaming/Xilinx/Vivado/2018.2/
+Vivado layouts directory: C:/Users/vidur/AppData/Roaming/Xilinx/Vivado/2018.2/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2018.2/lib/classes/planAhead.jar
+Vivado log file location: 	D:/FPGA_Development/Image-Desampling-FPGA/ImageDesampleVerilog/vivado.log
+Vivado journal file location: 	D:/FPGA_Development/Image-Desampling-FPGA/ImageDesampleVerilog/vivado.jou
+Engine tmp dir: 	D:/FPGA_Development/Image-Desampling-FPGA/ImageDesampleVerilog/.Xil/Vivado-12916-Vidu-VivoBook
+
+Xilinx Environment Variables
+----------------------------
+ALTERAOCLSDKROOT: C:\altera\14.1\hld
+XILINX: C:/Xilinx/Vivado/2018.2/ids_lite/ISE
+XILINX_DSP: C:/Xilinx/Vivado/2018.2/ids_lite/ISE
+XILINX_PLANAHEAD: C:/Xilinx/Vivado/2018.2
+XILINX_SDK: C:/Xilinx/SDK/2018.2
+XILINX_VIVADO: C:/Xilinx/Vivado/2018.2
+XILINX_VIVADO_HLS: C:/Xilinx/Vivado/2018.2
+
+
+GUI allocated memory:	199 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 517 MB
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// Opening Vivado Project: D:\FPGA_Development\Image-Desampling-FPGA\ImageDesampleVerilog\ImageDesampleVerilog.xpr. Version: Vivado v2018.2 
+// bx (ck):  Open Project : addNotify
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// [GUI Memory]: 71 MB (+71666kb) [00:00:08]
+// [Engine Memory]: 493 MB (+365890kb) [00:00:08]
+// Tcl Message: open_project D:/FPGA_Development/Image-Desampling-FPGA/ImageDesampleVerilog/ImageDesampleVerilog.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project D:/FPGA_Development/Image-Desampling-FPGA/ImageDesampleVerilog/ImageDesampleVerilog.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.2/data/ip'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 517 MB. GUI used memory: 46 MB. Current time: 7/4/22 11:10:27 AM IST
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 546 MB (+29188kb) [00:00:13]
+// Project name: ImageDesampleVerilog; location: D:/FPGA_Development/Image-Desampling-FPGA/ImageDesampleVerilog; part: xc7k70tfbv676-1
+// Tcl Message: open_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:07 . Memory (MB): peak = 782.352 ; gain = 46.578 
+dismissDialog("Open Project"); // bx (ck)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// [Engine Memory]: 576 MB (+2464kb) [00:00:16]
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Tcl Message: update_compile_order -fileset sources_1 
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, TopModule (testmp.v)]", 1); // B (D, ck)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, TopModule (testmp.v), Pro : processor (processor.v)]", 4); // B (D, ck)
+// PAPropertyPanels.initPanels (ALU.v) elapsed time: 0.2s
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, TopModule (testmp.v), Pro : processor (processor.v), ALU : ALU (ALU.v)]", 16, false); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, TopModule (testmp.v), Pro : processor (processor.v), ALU : ALU (ALU.v)]", 16, false, false, false, false, false, true); // B (D, ck) - Double Click
+selectCodeEditor("ALU.v", 186, 407); // ce (w, ck)
+selectCodeEditor("ALU.v", 186, 407, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("ALU.v", 241, 263); // ce (w, ck)
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // B (f, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// [GUI Memory]: 75 MB (+770kb) [00:00:46]
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, TopModule (testmp.v), Pro : processor (processor.v), MUX : Mux (Mux.v)]", 17, false); // B (D, ck)
+// [GUI Memory]: 79 MB (+617kb) [00:00:50]
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, TopModule (testmp.v), Pro : processor (processor.v), MUX : Mux (Mux.v)]", 17, false, false, false, false, false, true); // B (D, ck) - Double Click
+// [GUI Memory]: 85 MB (+1461kb) [00:00:54]
+// Elapsed time: 22 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, TopModule (testmp.v), Pro : processor (processor.v), ALU : ALU (ALU.v)]", 16, false); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, TopModule (testmp.v), Pro : processor (processor.v), ALU : ALU (ALU.v)]", 16, false, false, false, false, false, true); // B (D, ck) - Double Click
+selectCodeEditor("ALU.v", 130, 601); // ce (w, ck)
+selectCodeEditor("ALU.v", 174, 642); // ce (w, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, TopModule (testmp.v), Pro : processor (processor.v), CU : ControlUnit (ControlUnit.v)]", 19, false); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, TopModule (testmp.v), Pro : processor (processor.v), CU : ControlUnit (ControlUnit.v)]", 19, false, false, false, false, false, true); // B (D, ck) - Double Click
+selectCodeEditor("ControlUnit.v", 365, 385); // ce (w, ck)
+selectCodeEditor("ControlUnit.v", 386, 559); // ce (w, ck)
+selectCodeEditor("ControlUnit.v", 392, 410); // ce (w, ck)
+selectCodeEditor("ControlUnit.v", 371, 474); // ce (w, ck)
+selectCodeEditor("ControlUnit.v", 390, 540); // ce (w, ck)
+selectCodeEditor("ControlUnit.v", 388, 500); // ce (w, ck)
+selectCodeEditor("ControlUnit.v", 390, 561); // ce (w, ck)
+selectCodeEditor("ControlUnit.v", 387, 520); // ce (w, ck)
+selectCodeEditor("ControlUnit.v", 382, 582); // ce (w, ck)
+selectCodeEditor("ControlUnit.v", 390, 580); // ce (w, ck)
+selectCodeEditor("ControlUnit.v", 386, 426); // ce (w, ck)
+// [GUI Memory]: 91 MB (+1635kb) [00:01:49]
+selectCodeEditor("ControlUnit.v", 393, 394); // ce (w, ck)
+selectCodeEditor("ControlUnit.v", 394, 449); // ce (w, ck)
+selectCodeEditor("ControlUnit.v", 388, 512); // ce (w, ck)
+selectCodeEditor("ControlUnit.v", 393, 468); // ce (w, ck)
+selectCodeEditor("ControlUnit.v", 387, 428); // ce (w, ck)
+selectCodeEditor("ControlUnit.v", 387, 496); // ce (w, ck)
+selectCodeEditor("ControlUnit.v", 389, 560); // ce (w, ck)
+selectCodeEditor("ControlUnit.v", 387, 623); // ce (w, ck)
+selectCodeEditor("ControlUnit.v", 385, 586); // ce (w, ck)
+selectCodeEditor("ControlUnit.v", 392, 548); // ce (w, ck)
+selectCodeEditor("ControlUnit.v", 388, 598); // ce (w, ck)
+// [GUI Memory]: 95 MB (+197kb) [00:02:19]
+selectCodeEditor("ControlUnit.v", 383, 456); // ce (w, ck)
+selectCodeEditor("ControlUnit.v", 387, 627); // ce (w, ck)
+selectCodeEditor("ControlUnit.v", 388, 582); // ce (w, ck)
+selectCodeEditor("ControlUnit.v", 386, 651); // ce (w, ck)
+selectCodeEditor("ControlUnit.v", 388, 717); // ce (w, ck)
+selectCodeEditor("ControlUnit.v", 386, 451); // ce (w, ck)
+selectCodeEditor("ControlUnit.v", 393, 409); // ce (w, ck)
+selectCodeEditor("ControlUnit.v", 390, 472); // ce (w, ck)
+selectCodeEditor("ControlUnit.v", 388, 533); // ce (w, ck)
+selectCodeEditor("ControlUnit.v", 391, 604); // ce (w, ck)
+selectCodeEditor("ControlUnit.v", 385, 734); // ce (w, ck)
+selectCodeEditor("ControlUnit.v", 383, 733); // ce (w, ck)
+selectCodeEditor("ControlUnit.v", 391, 734); // ce (w, ck)
+selectCodeEditor("ControlUnit.v", 387, 675); // ce (w, ck)
+selectCodeEditor("ControlUnit.v", 393, 739); // ce (w, ck)
+selectCodeEditor("ControlUnit.v", 394, 673); // ce (w, ck)
+selectCodeEditor("ControlUnit.v", 386, 694); // ce (w, ck)
+selectCodeEditor("ControlUnit.v", 476, 395); // ce (w, ck)
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // B (f, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// [Engine Memory]: 604 MB (+65kb) [00:03:12]
+// Elapsed time: 24 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, TopModule (testmp.v)]", 1, true); // B (D, ck) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, TopModule (testmp.v)]", 1, true, false, false, false, false, true); // B (D, ck) - Double Click - Node
+selectCodeEditor("testmp.v", 14, 35); // ce (w, ck)
+selectCodeEditor("testmp.v", 0, 32); // ce (w, ck)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, TopModule (testmp.v)]", 1); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, TopModule (testmp.v), Pro : processor (processor.v)]", 4, true); // B (D, ck) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, TopModule (testmp.v), Pro : processor (processor.v)]", 4, true, false, false, false, false, true); // B (D, ck) - Double Click - Node
+// [GUI Memory]: 103 MB (+2844kb) [00:05:15]
+// Elapsed time: 86 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Mux.v", 2); // k (j, ck)
+selectCodeEditor("Mux.v", 299, 79); // ce (w, ck)
+selectCodeEditor("Mux.v", 126, 46); // ce (w, ck)
+// [Engine Memory]: 643 MB (+8713kb) [00:05:22]
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "processor.v", 5); // k (j, ck)
+// HMemoryUtils.trashcanNow. Engine heap size: 643 MB. GUI used memory: 58 MB. Current time: 7/4/22 11:15:42 AM IST
+// Elapsed time: 28 seconds
+selectCodeEditor("processor.v", 235, 392); // ce (w, ck)
+selectCodeEditor("processor.v", 84, 178); // ce (w, ck)
+// Elapsed time: 10 seconds
+selectCodeEditor("processor.v", 385, 430); // ce (w, ck)
+selectCodeEditor("processor.v", 385, 430, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("processor.v", 128, 716); // ce (w, ck)
+selectCodeEditor("processor.v", 440, 712); // ce (w, ck)
+selectCodeEditor("processor.v", 440, 712, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("processor.v", 383, 324); // ce (w, ck)
+selectCodeEditor("processor.v", 444, 715); // ce (w, ck)
+selectCodeEditor("processor.v", 444, 715, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("processor.v", 440, 398); // ce (w, ck)
+// Elapsed time: 10 seconds
+selectCodeEditor("processor.v", 388, 316); // ce (w, ck)
+selectCodeEditor("processor.v", 388, 316, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("processor.v", 585, 324); // ce (w, ck)
+selectCodeEditor("processor.v", 586, 318); // ce (w, ck)
+selectCodeEditor("processor.v", 586, 318, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("processor.v", 449, 670); // ce (w, ck)
+selectCodeEditor("processor.v", 449, 670, false, false, false, false, true); // ce (w, ck) - Double Click
+// Elapsed time: 20 seconds
+selectCodeEditor("processor.v", 529, 323); // ce (w, ck)
+selectCodeEditor("processor.v", 434, 667); // ce (w, ck)
+selectCodeEditor("processor.v", 434, 667, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("processor.v", 436, 667); // ce (w, ck)
+selectCodeEditor("processor.v", 245, 673); // ce (w, ck)
+selectCodeEditor("processor.v", 245, 673, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("processor.v", 321, 674); // ce (w, ck)
+selectCodeEditor("processor.v", 373, 678); // ce (w, ck)
+selectCodeEditor("processor.v", 360, 669); // ce (w, ck)
+selectCodeEditor("processor.v", 360, 669, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("processor.v", 366, 667); // ce (w, ck)
+selectCodeEditor("processor.v", 366, 667, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("processor.v", 211, 403); // ce (w, ck)
+selectCodeEditor("processor.v", 223, 409); // ce (w, ck)
+selectCodeEditor("processor.v", 363, 454); // ce (w, ck)
+selectCodeEditor("processor.v", 218, 405); // ce (w, ck)
+selectCodeEditor("processor.v", 218, 405, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("processor.v", 225, 405); // ce (w, ck)
+selectCodeEditor("processor.v", 225, 405, false, false, false, false, true); // ce (w, ck) - Double Click
+// Elapsed time: 16 seconds
+selectCodeEditor("processor.v", 488, 472); // ce (w, ck)
+selectCodeEditor("processor.v", 140, 471); // ce (w, ck)
+selectCodeEditor("processor.v", 481, 478); // ce (w, ck)
+selectCodeEditor("processor.v", 481, 478, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("processor.v", 491, 472); // ce (w, ck)
+selectCodeEditor("processor.v", 159, 525); // ce (w, ck)
+// Elapsed time: 10 seconds
+selectCodeEditor("processor.v", 273, 518); // ce (w, ck)
+selectCodeEditor("processor.v", 335, 521); // ce (w, ck)
+selectCodeEditor("processor.v", 317, 520); // ce (w, ck)
+selectCodeEditor("processor.v", 317, 520, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("processor.v", 355, 472); // ce (w, ck)
+selectCodeEditor("processor.v", 355, 472, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("processor.v", 319, 522); // ce (w, ck)
+selectCodeEditor("processor.v", 319, 522, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("processor.v", 595, 472); // ce (w, ck)
+selectCodeEditor("processor.v", 595, 472, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("processor.v", 1176, 716); // ce (w, ck)
+selectCodeEditor("processor.v", 1176, 716, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("processor.v", 1222, 717); // ce (w, ck)
+selectCodeEditor("processor.v", 1222, 717, false, false, false, false, true); // ce (w, ck) - Double Click
+// Elapsed time: 21 seconds
+selectCodeEditor("processor.v", 192, 409); // ce (w, ck)
+selectCodeEditor("processor.v", 192, 409, false, false, false, false, true); // ce (w, ck) - Double Click
+// Elapsed time: 49 seconds
+selectCodeEditor("processor.v", 357, 476); // ce (w, ck)
+selectCodeEditor("processor.v", 358, 476, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("processor.v", 425, 474); // ce (w, ck)
+selectCodeEditor("processor.v", 425, 474, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("processor.v", 271, 769); // ce (w, ck)
+// Elapsed time: 29 seconds
+selectCodeEditor("processor.v", 211, 765); // ce (w, ck)
+selectCodeEditor("processor.v", 211, 765, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("processor.v", 292, 300); // ce (w, ck)
+selectCodeEditor("processor.v", 292, 300, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("processor.v", 446, 301); // ce (w, ck)
+selectCodeEditor("processor.v", 446, 301, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("processor.v", 243, 585); // ce (w, ck)
+selectCodeEditor("processor.v", 243, 585, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("processor.v", 252, 581); // ce (w, ck)
+selectCodeEditor("processor.v", 252, 581, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("processor.v", 340, 585); // ce (w, ck)
+selectCodeEditor("processor.v", 967, 576); // ce (w, ck)
+selectCodeEditor("processor.v", 967, 576, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("processor.v", 427, 606); // ce (w, ck)
+selectCodeEditor("processor.v", 427, 606, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("processor.v", 179, 184); // ce (w, ck)
+selectCodeEditor("processor.v", 179, 184, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("processor.v", 1228, 605); // ce (w, ck)
+selectCodeEditor("processor.v", 1228, 605, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("processor.v", 396, 623); // ce (w, ck)
+selectCodeEditor("processor.v", 396, 623, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("processor.v", 360, 377); // ce (w, ck)
+selectCodeEditor("processor.v", 360, 377, false, false, false, false, true); // ce (w, ck) - Double Click
+// Elapsed time: 11 seconds
+selectCodeEditor("processor.v", 219, 762); // ce (w, ck)
+selectCodeEditor("processor.v", 219, 762, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("processor.v", 292, 294); // ce (w, ck)
+selectCodeEditor("processor.v", 292, 294, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("processor.v", 205, 783); // ce (w, ck)
+selectCodeEditor("processor.v", 205, 783, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("processor.v", 405, 319); // ce (w, ck)
+selectCodeEditor("processor.v", 405, 319, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("processor.v", 201, 717); // ce (w, ck)
+selectCodeEditor("processor.v", 201, 717, false, false, false, false, true); // ce (w, ck) - Double Click
+// Elapsed time: 13 seconds
+selectCodeEditor("processor.v", 216, 689); // ce (w, ck)
+selectCodeEditor("processor.v", 216, 689, false, false, false, false, true); // ce (w, ck) - Double Click
+// Elapsed time: 15 seconds
+selectCodeEditor("processor.v", 242, 742); // ce (w, ck)
+selectCodeEditor("processor.v", 242, 742, false, false, false, false, true); // ce (w, ck) - Double Click
+// Elapsed time: 19 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "testmp.v", 4); // k (j, ck)
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // B (f, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 56 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, TopModule (testmp.v), Pro : processor (processor.v)]", 4); // B (D, ck)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, TopModule (testmp.v), Pro : processor (processor.v)]", 4); // B (D, ck)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 6); // B (D, ck)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1]", 7); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, alu_tb (alu_tb.v)]", 9, true); // B (D, ck) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, alu_tb (alu_tb.v)]", 9, true, false, false, false, false, true); // B (D, ck) - Double Click - Node
+// Elapsed time: 10 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, TopModule (testmp.v), Pro : processor (processor.v)]", 4); // B (D, ck)
+collapseTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, TopModule (testmp.v), Pro : processor (processor.v)]", 4); // B (D, ck)
+// Elapsed time: 52 seconds
+selectTab(PAResourceEtoH.FileSetView_TABBED_PANE, (HResource) null, "Libraries", 1); // i (N, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Verilog, xil_defaultlib, ALU.v]", 3, false); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Verilog, xil_defaultlib, ALU.v]", 3, false, false, false, false, false, true); // B (D, ck) - Double Click
+// Elapsed time: 34 seconds
+selectCodeEditor("ALU.v", 38, 338); // ce (w, ck)
+// [GUI Memory]: 109 MB (+711kb) [00:15:26]
+typeControlKey((HResource) null, "ALU.v", 'c'); // ce (w, ck)
+// Elapsed time: 14 seconds
+selectCodeEditor("ALU.v", 114, 103); // ce (w, ck)
+// Elapsed time: 16 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Verilog, xil_defaultlib, DMemory.v]", 5, false); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Verilog, xil_defaultlib, DMemory.v]", 5, false, false, false, false, false, true); // B (D, ck) - Double Click
+// Elapsed time: 34 seconds
+selectCodeEditor("DMemory.v", 248, 309); // ce (w, ck)
+selectCodeEditor("DMemory.v", 251, 305, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("DMemory.v", 244, 305); // ce (w, ck)
+typeControlKey((HResource) null, "DMemory.v", 'v'); // ce (w, ck)
+selectCodeEditor("DMemory.v", 120, 404); // ce (w, ck)
+typeControlKey((HResource) null, "DMemory.v", 'v'); // ce (w, ck)
+selectCodeEditor("DMemory.v", 80, 430); // ce (w, ck)
+// Elapsed time: 14 seconds
+selectCodeEditor("DMemory.v", 35, 468); // ce (w, ck)
+selectCodeEditor("DMemory.v", 35, 468, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("DMemory.v", 35, 468); // ce (w, ck)
+typeControlKey((HResource) null, "DMemory.v", 'v'); // ce (w, ck)
+selectCodeEditor("DMemory.v", 27, 449); // ce (w, ck)
+// Elapsed time: 29 seconds
+selectCodeEditor("DMemory.v", 233, 649); // ce (w, ck)
+// Elapsed time: 16 seconds
+selectCodeEditor("DMemory.v", 101, 697); // ce (w, ck)
+typeControlKey((HResource) null, "DMemory.v", 'v'); // ce (w, ck)
+// Elapsed time: 29 seconds
+selectCodeEditor("DMemory.v", 163, 337); // ce (w, ck)
+// Elapsed time: 14 seconds
+selectCodeEditor("DMemory.v", 94, 449); // ce (w, ck)
+selectCodeEditor("DMemory.v", 91, 447); // ce (w, ck)
+selectCodeEditor("DMemory.v", 92, 471); // ce (w, ck)
+// Elapsed time: 30 seconds
+selectCodeEditor("DMemory.v", 181, 676); // ce (w, ck)
+selectCodeEditor("DMemory.v", 181, 676, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("DMemory.v", 134, 675); // ce (w, ck)
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // B (f, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 20 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Mux.v", 2); // k (j, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALU.v", 1); // k (j, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "DMemory.v", 7); // k (j, ck)
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // B (f, ck)
+selectCodeEditor("DMemory.v", 305, 404); // ce (w, ck)

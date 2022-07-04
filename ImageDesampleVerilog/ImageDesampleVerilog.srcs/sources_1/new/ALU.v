@@ -25,7 +25,7 @@ module ALU(
 	assign C=data;
 	
 		
-	always @(operation) begin
+	always @(B) begin
 		case(operation)
 			ADD: data = A+B;
 			SUB: begin

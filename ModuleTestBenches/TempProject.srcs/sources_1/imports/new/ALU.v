@@ -16,15 +16,16 @@ module ALU(
 				  LSHIFT2  = 4'b0110,
 				  LSHIFT8  = 4'b0111,
 				  RSHIFT1  = 4'b1000,
-				  RSHIFT4  = 4'b1001;
+				  RSHIFT4  = 4'b1001,
+				  RESET    = 4'b1011;
 
 	reg [17:0] data;
 	reg Z;
-	assign z= Z;
+	assign z = Z;
 	assign C=data;
 	
 		
-	always @(A or B or operation) begin
+	always @(B) begin
 		case(operation)
 			ADD: data = A+B;
 			SUB: begin
@@ -38,6 +39,7 @@ module ALU(
 			LSHIFT8: data = A<<8;
 			RSHIFT1: data = A>>1;
 			RSHIFT4: data = A>>4;
+			RESET:   data = 18'd0;
 			none: data=data;
 		endcase
 	end
