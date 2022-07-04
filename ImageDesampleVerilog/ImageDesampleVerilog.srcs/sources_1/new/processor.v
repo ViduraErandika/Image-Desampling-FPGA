@@ -46,7 +46,7 @@ module processor(
 								.e(le), .mdr(lmdr), .mar(lmar));
 								
 	
-	ControlUnit CU(.ir(irCU), .z(z), .clk(clk), .start(start), .mux_sig(M_select), .alu_sig(operation),
+	ControlUnit CU(.ir(irCU), .z(z), .clk(clk), .start_sig(start), .mux_sig(M_select), .alu_sig(operation),
 							.iram_fetch(fetch), .dram_read(read), .dram_write(write), .load_decode_sig(D_select), .incac(incac),
 							.pc_sig(PC_select));
 							
