@@ -3,7 +3,7 @@ import numpy as np
 from cv2 import waitKey
 from PIL import Image 
 
-im = cv2.imread("bird.jpg",0)         #Output the image in gray scale mode
+im = cv2.imread("image.jpg",0)         #Output the image in gray scale mode
 #cv2.imshow('Original_Image',im)
 
 im=np.pad(im,1, mode='constant')     #Zero pad for the image
