@@ -1,0 +1,61 @@
+
+*** Running vivado
+    with args -log TopModule.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source TopModule.tcl -notrace
+
+
+****** Vivado v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source TopModule.tcl -notrace
+Command: link_design -top TopModule -part xc7k70tfbv676-1
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Netlist 29-17] Analyzing 75 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2018.2
+INFO: [Device 21-403] Loading part xc7k70tfbv676-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+6 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 553.527 ; gain = 304.879
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7k70t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7k70t'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net Pro/ALU/Q[0] has multiple drivers: Pro/AC/d_reg[0]/Q, and Pro/ALU/data_reg[0]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net Pro/ALU/Q[10] has multiple drivers: Pro/AC/d_reg[10]/Q, and Pro/ALU/data_reg[10]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net Pro/ALU/Q[11] has multiple drivers: Pro/AC/d_reg[11]/Q, and Pro/ALU/data_reg[11]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net Pro/ALU/Q[12] has multiple drivers: Pro/AC/d_reg[12]/Q, and Pro/ALU/data_reg[12]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net Pro/ALU/Q[13] has multiple drivers: Pro/AC/d_reg[13]/Q, and Pro/ALU/data_reg[13]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net Pro/ALU/Q[14] has multiple drivers: Pro/AC/d_reg[14]/Q, and Pro/ALU/data_reg[14]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net Pro/ALU/Q[15] has multiple drivers: Pro/AC/d_reg[15]/Q, and Pro/ALU/data_reg[15]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net Pro/ALU/Q[16] has multiple drivers: Pro/AC/d_reg[16]/Q, and Pro/ALU/data_reg[16]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net Pro/ALU/Q[17] has multiple drivers: Pro/AC/d_reg[17]/Q, and Pro/ALU/data_reg[17]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net Pro/ALU/Q[1] has multiple drivers: Pro/AC/d_reg[1]/Q, and Pro/ALU/data_reg[1]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net Pro/ALU/Q[2] has multiple drivers: Pro/AC/d_reg[2]/Q, and Pro/ALU/data_reg[2]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net Pro/ALU/Q[3] has multiple drivers: Pro/AC/d_reg[3]/Q, and Pro/ALU/data_reg[3]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net Pro/ALU/Q[4] has multiple drivers: Pro/AC/d_reg[4]/Q, and Pro/ALU/data_reg[4]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net Pro/ALU/Q[5] has multiple drivers: Pro/AC/d_reg[5]/Q, and Pro/ALU/data_reg[5]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net Pro/ALU/Q[6] has multiple drivers: Pro/AC/d_reg[6]/Q, and Pro/ALU/data_reg[6]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net Pro/ALU/Q[7] has multiple drivers: Pro/AC/d_reg[7]/Q, and Pro/ALU/data_reg[7]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net Pro/ALU/Q[8] has multiple drivers: Pro/AC/d_reg[8]/Q, and Pro/ALU/data_reg[8]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net Pro/ALU/Q[9] has multiple drivers: Pro/AC/d_reg[9]/Q, and Pro/ALU/data_reg[9]/Q.
+INFO: [Project 1-461] DRC finished with 18 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+ERROR: [Vivado_Tcl 4-78] Error(s) found during DRC. Opt_design not run.
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 573.066 ; gain = 19.535
+INFO: [Common 17-83] Releasing license: Implementation
+11 Infos, 0 Warnings, 0 Critical Warnings and 19 Errors encountered.
+opt_design failed
+ERROR: [Common 17-39] 'opt_design' failed due to earlier errors.
+
+INFO: [Common 17-206] Exiting Vivado at Tue Jul  5 11:02:34 2022...

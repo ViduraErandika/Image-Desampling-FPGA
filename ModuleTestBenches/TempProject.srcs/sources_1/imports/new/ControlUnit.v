@@ -9,7 +9,7 @@ module ControlUnit(
 	output reg iram_fetch,
     output reg dram_read,
     output reg dram_write,
-    output reg [8:0] load_decode_sig,
+    output reg [7:0] load_decode_sig,
     output reg incac,
     output wire [2:0] PC_SIG // 
     

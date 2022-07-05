@@ -62,5 +62,5 @@ while i<((256+2)*(256+2))-(256+2)-1:
         a=[]
 
 downsampled=np.array(downsampled)
-print(downsampled)
-gr_im= Image.fromarray(downsampled).save('downsampled_bird.png')
+# print(downsampled)
+gr_im= Image.fromarray(downsampled).save('downsampled_image.png')

@@ -17,6 +17,6 @@ for i in lines  :
 
 
 downsampled=np.array(x)
-print(downsampled)
+# print(downsampled)
 gr_im= Image.fromarray(downsampled)
-gr_im.convert("L").save('downsampled_bird_from_processor.png')
+gr_im.convert("L").save('downsampled_image_from_processor.png')
